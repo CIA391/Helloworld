@@ -29,7 +29,7 @@
 
                     //activity 2 switches
                     $wantedgood = "mugs";
-                    switch ($age) {
+                    switch ($wantedgood) {
                         case "specs":
                             echo "You need to be over 16";
                             break;
@@ -49,8 +49,8 @@
                     foreach($provisionedactivities as $x) {
                         print "<p>$x</p>";
                     }
-                    $provisionedactivities['mugs'] = "hugs";
-                    unset($provisionedactivities['foo']);
+                    $provisionedactivities[1] = "hugs";
+                    unset($provisionedactivities[2]);
                 ?>
             </p>
         </body>
