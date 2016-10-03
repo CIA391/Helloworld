@@ -48,12 +48,20 @@
                     $provisionedactivities = array("specs", "mugs", "sausage rolls");
                     foreach($provisionedactivities as $x) {
                         print "<p>$x</p>";
-
-                        $provisionedactivities[1] = "hugs";
-                        print "<p>$x</p>";
-                        unset($provisionedactivities[2]);
-                        print "<p>$x</p>";
                     }
+                        $provisionedactivities[1] = "hugs";
+
+                echo "chaning mugs to hugs";
+                foreach($provisionedactivities as $x) {
+                    print "<p>$x</p>";
+                }
+                        unset($provisionedactivities[2]);
+
+                echo "removing sausage rolls";
+                foreach($provisionedactivities as $x) {
+                    print "<p>$x</p>";
+                }
+
                 ?>
             </p>
         </body>
