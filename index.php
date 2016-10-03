@@ -48,9 +48,12 @@
                     $provisionedactivities = array("specs", "mugs", "sausage rolls");
                     foreach($provisionedactivities as $x) {
                         print "<p>$x</p>";
+
+                        $provisionedactivities[1] = "hugs";
+                        print "<p>$x</p>";
+                        unset($provisionedactivities[2]);
+                        print "<p>$x</p>";
                     }
-                    $provisionedactivities[1] = "hugs";
-                    unset($provisionedactivities[2]);
                 ?>
             </p>
         </body>
