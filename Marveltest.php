@@ -25,10 +25,10 @@ $result->close();
  // cl ose connection to database
  $db->close();
 
-$result=mysqli_query($db,$sql);
+/*$result=mysqli_query($db,$sql);
 while($row = $result->fetch_array()) {
     /* the code inside here is repeat ed for each item i n the array
     You can do thi ngs like the followi ng to print out each movi e title */
-    $movieTitle = $row['title'];
+    /*$movieTitle = $row['title'];
     echo ""<p>"" . $movieTitle . ""</p>"";
-    }
+    }*/
