@@ -1,5 +1,4 @@
 <?php
-include("DBCONNECT.php");
 /** Adminer - Compact database management
 * @link https://www.adminer.org/
 * @author Jakub Vrana, http://www.vrana.cz/
