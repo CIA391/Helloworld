@@ -22,3 +22,12 @@ while($row = $result->fetch_array()){
     echo $row['title'] . " | ";
 }
 echo "</p>";
+
+$sql_query = "SELECT * FROM marvelmovies WHERE yearReleased > 2010";
+// execute the SQL query
+$result = $db->query($sql_query);
+echo "<p><strong>Movies after 2010: </strong>";
+while($row = $result->fetch_array()){
+    echo $row['title'] . " | ";
+}
+echo "</p>";
