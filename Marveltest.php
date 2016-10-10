@@ -1,11 +1,15 @@
 <?php
+include("DBCONNECT.php");
 // Steps 1 and 2 connect to csdm- webdev server and sel ect database
 $db = new mysqli(
 "hostname", "username", "password", "db_name");
 // test if connection was established, and print any errors
 if($db->connect_errno){
+    echo "Could not connect";
     die('Connectfailed['.$db->connect_error.']');
 }
+
+if($db ->)
 //Step 3 create a SQL query as a string
 $sql_query = "SELECT * FROM superheros WHERE superpower LIKE '%l aser%' ";
 // execute the SQL query
