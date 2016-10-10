@@ -43,25 +43,42 @@
                             echo "Error 101: you messed bro";
                             break;
                     }
-
                     //activity 3 arrays
                     $provisionedactivities = array("specs", "mugs", "sausage rolls");
                     foreach($provisionedactivities as $x) {
                         print "<p>$x</p>";
                     }
-                        $provisionedactivities[1] = "hugs";
+                    $provisionedactivities[1] = "hugs";
+                    echo "changing mugs to hugs";
+                    foreach($provisionedactivities as $x) {
+                        print "<p>$x</p>";
+                    }
+                    unset($provisionedactivities[2]);
+                        echo "removing sausage rolls";
+                        foreach($provisionedactivities as $x) {
+                        print "<p>$x</p>";
+                    }
 
-                echo "chaning mugs to hugs";
-                foreach($provisionedactivities as $x) {
-                    print "<p>$x</p>";
+                    //activity 4
+                for ($i = 1; $i <= 31; $i++) {
+                    echo "The day of the month is: $i <br>";
+                    if (($i % ))
+
+
+
+                    $i = $x;
+
+                    switch ($x) {
+                        case "1":
+                            echo "Nothing is available<br>";
+                        case "2":
+                            echo "Specs are available<br>";
+                        case "3":
+                            echo "Mugs are available<br>";
+                        case "4":
+                            echo "Sausage roles are available<br>";
+                    }
                 }
-                        unset($provisionedactivities[2]);
-
-                echo "removing sausage rolls";
-                foreach($provisionedactivities as $x) {
-                    print "<p>$x</p>";
-                }
-
                 ?>
             </p>
         </body>
