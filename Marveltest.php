@@ -1,15 +1,15 @@
 <?php
 include("DBCONNECT.php");
-// Steps 1 and 2 connect to csdm- webdev server and sel ect database
+
 
 $sql_query = "SELECT * FROM marvelmovies";
-
+// execute the SQL query
 $result = $db->query($sql_query);
-
+// iterate over $result object one $row at a time
+// use fetch_array() to return an associative array
+echo "<p><strong>All Movies: </strong>";
 while($row = $result->fetch_array()){
-    echo "<p>" . $row['title']. "</p>";
+    // print out fields from row of data
+    echo $row['title'] . " | ";
 }
-
-$result->close();
- // close connection to database
- $db->close();
+echo "</p>";
