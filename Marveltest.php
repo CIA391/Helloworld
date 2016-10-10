@@ -9,7 +9,6 @@ if($db->connect_errno){
     die('Connectfailed['.$db->connect_error.']');
 }
 
-if($db ->)
 //Step 3 create a SQL query as a string
 $sql_query = "SELECT * FROM superheros WHERE superpower LIKE '%l aser%' ";
 // execute the SQL query
