@@ -13,3 +13,12 @@ while($row = $result->fetch_array()){
     echo $row['title'] . " | ";
 }
 echo "</p>";
+
+$sql_query2 = "SELECT * FROM marvelmovies AND productionStudio = 'Marvel Studios'";
+// execute the SQL query
+$result2 = $db->query($sql_query2);
+echo "<p><strong>Marvel studio Movies: </strong>";
+while($row = $result2->fetch_array()){
+    echo $row['title'] . " | ";
+}
+echo "</p>";
