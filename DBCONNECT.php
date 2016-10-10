@@ -6,4 +6,3 @@ $db = new mysqli (
     '5d557954',
 'marvel'
 );
-?>
