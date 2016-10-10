@@ -14,7 +14,7 @@ while($row = $result->fetch_array()){
 }
 echo "</p>";
 
-$sql_query = "SELECT * FROM marvelmovies AND productionStudio = 'Marvel Studios'";
+$sql_query = "SELECT * FROM marvelmovies WHERE productionStudio = 'Marvel Studios'";
 // execute the SQL query
 $result = $db->query($sql_query);
 echo "<p><strong>Marvel studio Movies: </strong>";
