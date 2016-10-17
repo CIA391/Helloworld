@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>Where would you like yo say hello?</h1>
+<a href="1407746.azurewebsites.net/helloPrinter.php"</a>
+
 <?php
-$Location="http://1407746.azurewebsites.net/helloPrinter.php";
-Header($Location);
 ?>
 </body>
