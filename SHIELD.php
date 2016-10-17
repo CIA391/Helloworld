@@ -6,9 +6,9 @@
 </head>
 <body>
 <form action="SHIELDResponse.php" method="post">
-    <label>name</label><input type=“text” name=“name”>
-    <label>gender</label><input type=“text” name=“gender”>
-    <label>power</label><input type=“text” name=“power”>
+    <label>name</label><input type="text" name="name">
+    <label>gender</label><input type="text" name="gender">
+    <label>power</label><input type="text" name="power">
     <input type="submit" value="Submit">
 </form>
 </body>
