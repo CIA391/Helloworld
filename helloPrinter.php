@@ -1,4 +1,4 @@
 <?php
-    $planet = $_GET("planet");
+    $planet = $_GET["planet"];
     echo "Hello " . $planet;
 ?>
