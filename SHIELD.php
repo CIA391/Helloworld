@@ -6,7 +6,8 @@
 </head>
 <body>
 <form action="SHIELDResponse.php" method="post">
-    <label>name</label><input type="text" name="name">
+    <label>firstname</label><input type="text" name="name">
+    <label>lastname</label><input type="text" name="lastname">
     <label>gender</label><input type="text" name="gender">
     <label>power</label><input type="text" name="power">
     <input type="submit" value="Submit">
@@ -14,3 +15,11 @@
 </body>
 <?php
 ?>
+
+CREATE TABLE `superheros` (
+`superheroID` int(10) NOT NULL AUTO_INCREMENT,
+`firstName` text NOT NULL,
+`lastName` text NOT NULL,
+`mainSuperpower` text NOT NULL,
+PRIMARY KEY (`superheroID`)
+)
