@@ -6,9 +6,9 @@
 </head>
 <body>
 <h1>Where would you like yo say hello?</h1>
-<a href="http://1407746.azurewebsites.net/helloPrinter.php?planet=earth">Earth</a> <br>
-<a href="http://1407746.azurewebsites.net/helloPrinter.php?planet=mars">Mars</a> <br>
-<a href="http://1407746.azurewebsites.net/helloPrinter.php?planet=uranus">Uranus</a>
+<a href="http://1407746.azurewebsites.net/helloPrinter.php?planet=Earth">Earth</a> <br>
+<a href="http://1407746.azurewebsites.net/helloPrinter.php?planet=Mars">Mars</a> <br>
+<a href="http://1407746.azurewebsites.net/helloPrinter.php?planet=Uranus">Uranus</a>
 <?php
 ?>
 </body>
