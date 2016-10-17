@@ -16,10 +16,10 @@
 <?php
 ?>
 
-CREATE TABLE `superheros` (
-`superheroID` int(10) NOT NULL AUTO_INCREMENT,
-`firstName` text NOT NULL,
-`lastName` text NOT NULL,
-`mainSuperpower` text NOT NULL,
-PRIMARY KEY (`superheroID`)
+CREATE TABLE 'superheros' (
+    'superheroID'       int(10) NOT NULL AUTO_INCREMENT,
+    'firstName'         text    NOT NULL,
+    'lastName'          text    NOT NULL,
+    'mainSuperpower'    text    NOT NULL,
+    PRIMARY KEY (`superheroID`)
 )
