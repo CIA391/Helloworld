@@ -6,8 +6,9 @@
 </head>
 <body>
 <h1>Where would you like yo say hello?</h1>
-<a href="https://pixabay.com/en/photos/?image_type=&cat=&min_width=&min_height=&q=africa&order=popular">https://pixabay.com/en/photos/?image_type=&cat=&min_width=&min_height=&q=africa&order=popular</a>
-
+<a href="http://1407746.azurewebsites.net/helloPrinter.php">Earth</a>
+<a href="http://1407746.azurewebsites.net/helloPrinter.php">Mars</a>
+<a href="http://1407746.azurewebsites.net/helloPrinter.php">Uranus</a>
 <?php
 ?>
 </body>
