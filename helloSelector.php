@@ -8,6 +8,6 @@
 <h1>Where would you like yo say hello?</h1>
 <?php
 $Location="http://1407746.azurewebsites.net/helloPrinter.php";
-Header($Location)
+Header($Location);
 ?>
 </body>
