@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Where would you like yo say hello?</h1>
-
+echo <a href="http://1407746.azurewebsites.net/helloPrinter.php"</a>
 <?php
 echo "<p></p>"
 ?>
