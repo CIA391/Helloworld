@@ -5,7 +5,6 @@
 </head> 
 <body> 
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     ?>
     <form action="selfref.php" method="post">
