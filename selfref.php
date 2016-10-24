@@ -7,7 +7,7 @@
 <?php 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         ?>
-        <form action="<? echo "$_SERVER['PHP_SELF']"; ?>" method="post"> 
+        <form action="selfref.php" method="post"> 
             <label>Forename</label> 
             <input type="text" name="forename"> 
             <label>Surname</label> 
