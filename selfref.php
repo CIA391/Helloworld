@@ -4,9 +4,7 @@
     <title>selfreference</title> 
 </head> 
 <body> 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    ?>
+<?php if ($_SERVER['REQUEST_METHOD'] === 'GET') { ?>
     <form action="selfref.php" method="post">
         <label>Forename</label> 
         <input type="text" name="forename"> 
