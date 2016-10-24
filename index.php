@@ -6,7 +6,7 @@
     </head>
 
     <body>
-        <form action=""checklogin.php" method="post">
+        <form action="checklogin.php" method="post">
             Name:<br>
             <input type="text" name="name">
             <br>
