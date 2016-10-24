@@ -1,7 +1,7 @@
 <?php
 
 $username = $_POST["name"];
-$password = $_POSR["password"];
+$password = $_POST["password"];
 
 if ($username =="username" && $password=="password")
 {
