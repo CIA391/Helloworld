@@ -20,9 +20,6 @@
         $surname = $_POST["surname"];
         print("<h1>Hello {$forename} {$surname}</h1>");
     }
-    else {
-        // this is impossible 
-    }
     ?> 
     </body>
 </html>
