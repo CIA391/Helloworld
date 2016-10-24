@@ -14,14 +14,14 @@
             <input type="text" name="surname"> 
             <p><input type="submit" value="Submit"></p> 
         </form>
-        <?
-    } 
+
+    <?}  
     elseif ($_SERVER['REQUEST_METHOD'] === 'POST'){ 
-// execute if requested using HTTP POST Method 
-    echo "hello";
+    // execute if requested using HTTP POST Method 
+        echo "hello";
     } 
-else { 
-// this is impossible 
-}  ?> 
+    else { 
+    // this is impossible 
+    }  ?> 
 </body> 
 </html>
