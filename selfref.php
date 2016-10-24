@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST METHOD'] === 'GET') {
     </form>
     <?
 }
-elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+elseif ($_SERVER['REQUEST_M}ETHOD'] === 'POST') {
     $forename = $_POST["forename"];
     $surname = $_POST["surname"];
     print("<h1>Hello {$forename} {$surname}</h1>");
