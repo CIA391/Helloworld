@@ -1,20 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset=UTF-8">
-        <title>Login Page</title>
-    </head>
+<?
+define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
 
-    <body>
-        <form action="checklogin.php" method="post">
-            Name:<br>
-            <input type="text" name="name">
-            <br>
-            Password:<br>
-            <input type="password" name="password">
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </body>
-</html>
+$rules = array(
+    //
+    //main pages
+    //
+    'about' => "/about",
+    'contactus' => "/contactus",
+    'blog' => "/blog",
+    'blog_article' => "/blog/(?'blogID'[\w|-]+)",
+
+    //
+    //Admin Pages
+    //
+    'login' => "/login",
+    'create_article' => "/createarticle",
+    'logout' => "/logout",
+    //
+    // Home Page
+    //
+    'home' => "/"
+);
+
+$uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
+$uri = '/' . trim(str_replace($uri, $_SERVER['REQUEST_URI']), '/');
+$uri = urldecode($uri);
+
+foreach ($rules as $action => $rule) {
+    if (pref_match('~^' . $rule . '$~i', $uri, $params)) {
+        include(INCLUDE_DIR . $action . '.php');
+        exit();
+    }
+}
+
+// nothing is found so handle the 404 error
+include(INCLUDE_DIR . '404.php');
+
+?>
 
