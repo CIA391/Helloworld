@@ -1,7 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: 1407746
- * Date: 31/10/2016
- * Time: 13:46
- */
+<?
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Blog of Charles Babbage</title>
+</head>
+</html>
