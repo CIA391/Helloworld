@@ -28,5 +28,4 @@ session_start();
         </ul>
     </nav>
 </header>
-</body>
-</html>
+
