@@ -1,6 +1,6 @@
 <?
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
-
+echo "here";
 $rules = array(
     //
     //main pages
