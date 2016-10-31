@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <title>The Blog of Charles Babbage</title>
 </head>
+
 <body>
 <header>
     <h1>The Blog of Charles Babbage</h1>
