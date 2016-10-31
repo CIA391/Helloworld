@@ -19,4 +19,4 @@ function displayAccessLevelInformation($access_level)
         echo "<p style = \"background-color: red\">You now have access to additional adimistative features</p>";
     }
 }
-?>l
+?>
