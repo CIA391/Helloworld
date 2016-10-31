@@ -1,11 +1,11 @@
 <?php
 
-include ("header.php");
+include ("scripts/header.php");
 
 echo "
 <main>
 <p>Welcome to the blog of Charles Babbage! In this blog you will see all of my insights and wonderful things</p>";
 
-include ("footer/php");
+include ("scripts/footer/php");
 
 ?>
