@@ -1,5 +1,7 @@
 <?
+
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
+
 $rules = array(
     //
     //main pages
@@ -28,7 +30,6 @@ $uri = urldecode($uri);
 foreach ($rules as $action => $rule) {
     echo INCLUDE_DIR . $action . '.php';
     if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
-
         include(INCLUDE_DIR . $action . '.php');
         exit();
     }
