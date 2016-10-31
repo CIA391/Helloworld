@@ -29,7 +29,7 @@ foreach ($rules as $action => $rule) {
     echo INCLUDE_DIR . $action . '.php';
     if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
 
-        //include(INCLUDE_DIR . $action . '.php');
+        include(INCLUDE_DIR . $action . '.php');
         exit();
     }
 }
