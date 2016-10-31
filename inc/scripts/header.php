@@ -16,7 +16,7 @@ session_start();
         <ul>
             <li><a href="./">Home Page</a></li>
             <li><a href="./">My Blog</a></li>
-            <li><a href="./">ABout Me</a></li>
+            <li><a href="./">About Me</a></li>
             <li><a href="./">Contact Me</a></li>
             <?
             if (isset($_SESSION['username'])) {
