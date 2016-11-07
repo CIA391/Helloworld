@@ -5,6 +5,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqTwRJlg6NJ-LC2BFzVrE79KZ8vaWQamg" type="text/JavaScript"></script>
     <script type="text/JavaScript">
 
+        var infoWindow = new google.maps.InfoWindow;
+
         var customIcons = {
             restaurant: {
                 icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
@@ -22,6 +24,14 @@
                 mapTypeId: 'roadmap'
             });
 
+            function bindInfoWindow(marker, map, infoWindow, html) {
+                google.maps.event.addListener(marker, 'click', function() {
+                    infoWindow.setContent(html);
+                    infoWindow.open(map, marker);
+                });
+            }
+
+
             downloadUrl("locations.php", function(data) {
                 var xml = data.responseXML;
                 var markers = xml.documentElement.getElementsByTagName("marker");
@@ -38,6 +48,7 @@
                         position: point,
                         icon: icon.icon
                     });
+                    bindInfoWindow(marker, map, infoWindow, html);
                 }
             });
         }
