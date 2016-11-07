@@ -22,7 +22,7 @@ $parnode = $dom->appendChild($node);
 //Select all the rows n the markers table
 $query = "SELECT * FROM markers WHERE 1";
 $result = $db->query($query);
-if (!result) {
+if (!$result) {
     die('Nothing in result: ');
 }
 
