@@ -10,6 +10,20 @@
                 zoom: 13,
                 mapTypeId: 'roadmap'
             });
+
+            downloadUrl("locations.php", function(data) {
+                var xml = data.responseXML;
+                var markers = xml.documentElement.getElementsByTagName("marker");
+                for (var i = 0; i < markers.length; i++) {
+                    var point = new google.maps.LatLng(
+                            parseFloat(markers[i].getAttribute("lat")),
+                            parseFloat(markers[i].getAttribute("lng")));
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: point
+                    });
+                }
+            });
         }
 
         function downloadUrl(url,callback) {
@@ -26,20 +40,6 @@
             request.open('GET', url, true);
             request.send(null);
         }
-
-        downloadUrl("locations.php", function(data) {
-            var xml = data.responseXML;
-            var markers = xml.documentElement.getElementsByTagName("marker");
-            for (var i = 0; i < markers.length; i++) {
-                var point = new google.maps.LatLng(
-                        parseFloat(markers[i].getAttribute("lat")),
-                        parseFloat(markers[i].getAttribute("lng")));
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: point
-                });
-            }
-        });
 
     </script>
 
