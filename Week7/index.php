@@ -7,7 +7,7 @@
 <body>
 <p>Week 7</p>
 <ul>
-    <li><a href="/Week7/test1">Test 1</a></li>
+    <li><a href="/Week7\test1">Test 1</a></li>
 
 </ul>
 </body>
