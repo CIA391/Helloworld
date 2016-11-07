@@ -1,2 +1,49 @@
-<?xml version="1.0"?>
-<markers><marker name="Pan Africa Market" address="1521 1st Ave, Seattle, WA" lat="47.608940" lng="-122.340141" type="restaurant"/><marker name="Buddha Thai &amp; Bar" address="2222 2nd Ave, Seattle, WA" lat="47.613590" lng="-122.344391" type="bar"/><marker name="The Melting Pot" address="14 Mercer St, Seattle, WA" lat="47.624561" lng="-122.356445" type="restaurant"/><marker name="Ipanema Grill" address="1225 1st Ave, Seattle, WA" lat="47.606365" lng="-122.337654" type="restaurant"/><marker name="Sake House" address="2230 1st Ave, Seattle, WA" lat="47.612823" lng="-122.345673" type="bar"/><marker name="Crab Pot" address="1301 Alaskan Way, Seattle, WA" lat="47.605961" lng="-122.340363" type="restaurant"/><marker name="Mama's Mexican Kitchen" address="2234 2nd Ave, Seattle, WA" lat="47.613976" lng="-122.345467" type="bar"/><marker name="Wingdome" address="1416 E Olive Way, Seattle, WA" lat="47.617214" lng="-122.326584" type="bar"/><marker name="Piroshky Piroshky" address="1908 Pike pl, Seattle, WA" lat="47.610126" lng="-122.342834" type="restaurant"/></markers>
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$db = new mysqli (
+    'us-cdbr-azure-southcentral-f.cloudapp.net',
+    'bf9afe7c1df5c8',
+    '5d557954',
+    'acsm_0dd8805538e55e7');
+
+// test our connection
+if ($db->connect_errno) {
+    die ('Connection Failed :'.$db->connect_error );
+}
+
+//Start XML file, create parent node
+$dom = new DOMDocument("1.0");
+$node = $dom->createElement("markers");
+$parnode = $dom->appendChild($node);
+
+//Select all the rows n the markers table
+$query = "SELECT * FROM markers WHERE 1";
+$result = $db->query($query);
+if (!$result) {
+    die('Nothing in result: ');
+}
+
+header("Content-type: text/xml");
+
+//Iterate through the rows, adding XML node for each
+
+while ($row = $result->fetch_array()) {
+    //ADD TO XML DOCUMENT NODE
+    $node = $dom->createElement("marker");
+    $newnode = $parnode->appendChild($node);
+    $newnode->setAttribute("name",$row['name']);
+    $newnode->setAttribute("address", $row['address']);
+    $newnode->setAttribute("lat", $row['lat']);
+    $newnode->setAttribute("lng", $row['lng']);
+    $newnode->setAttribute("type", $row['type']);
+}
+
+$result->close();
+$db->close();
+
+echo $dom->saveXML();
+
+?>
