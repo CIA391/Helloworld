@@ -1,0 +1,13 @@
+<?php
+
+$db = new mysqli (
+    'us-cdbr-azure-southcentral-f.cloudapp.net',
+    'bf9afe7c1df5c8',
+    '5d557954',
+    'acsm_0dd8805538e55e7');
+
+// test our connection
+if ($db->connect_errno) {
+    die ('Connection Failed :'.$db->connect_error );
+}
+?>
