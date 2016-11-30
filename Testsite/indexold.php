@@ -50,8 +50,8 @@
 		</div>
 <a class="twitter-timeline"
   href="https://twitter.com/TwitterDev"
-  data-width="300"
-  data-height="300">
+  data-width="100"
+  data-height="100">
 Tweets by @TwitterDev
 </a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<div id="footer">
