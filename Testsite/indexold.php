@@ -46,12 +46,11 @@
 		<p>
 		Test site.<br>
 		Please edit at will.</p>
-			<a class="twitter-timeline" href="https://twitter.com/TwitterDev">Tweets by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 <a class="twitter-timeline"
   href="https://twitter.com/TwitterDev"
-  data-width="100"
-  data-height="100">
+  data-width="200"
+  data-height="200">
 Tweets by @TwitterDev
 </a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<div id="footer">
