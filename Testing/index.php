@@ -5,7 +5,11 @@
 </head> 
 <body>
 <?
-$link = @mysql_connect(localhost, username, password);
+$link = new mysqli (
+    'us-cdbr-azure-southcentral-f.cloudapp.net',
+    'bf9afe7c1df5c8',
+    '5d557954',
+    'acsm_0dd8805538e55e7');
 if(!$link){
    echo('Error connecting to the database: ' . mysql_error());
    exit();
