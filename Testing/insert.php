@@ -23,7 +23,7 @@ $name = mysqli_real_escape_string($link, $_POST['name']);
 $email = mysqli_real_escape_string($link, $_POST['email']);
  
 // attempt insert query execution
-$sql = "INSERT INTO news (id, headline, story, name, email, timestamp) VALUES ('$id', '$headline', '$story', '$name', '$email, NOW())";
+$sql = "INSERT INTO news (id, headline, story, name, email, timestamp) VALUES ('$id', '$headline', '$story', '$name', '$email', NOW())";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
