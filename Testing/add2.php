@@ -7,16 +7,24 @@
 <body>
 <form action="insert.php" method="post">
     <p>
-        <label for="firstName">First Name:</label>
-        <input type="text" name="firstname" id="firstName">
+        <label for="id">First Name:</label>
+        <input type="text" name="id" id="id">
     </p>
     <p>
-        <label for="lastName">Last Name:</label>
-        <input type="text" name="lastname" id="lastName">
+        <label for="headline">Last Name:</label>
+        <input type="text" name="headline" id="headline">
     </p>
     <p>
-        <label for="emailAddress">Email Address:</label>
-        <input type="text" name="email" id="emailAddress">
+        <label for="story">Email Address:</label>
+        <input type="text" name="story" id="story">
+    </p>
+    <p>
+        <label for="name">Email Address:</label>
+        <input type="text" name="name" id="name">
+    </p>
+    <p>
+        <label for="email">Email Address:</label>
+        <input type="text" name="email" id="email">
     </p>
     <input type="submit" value="Submit">
 </form>
