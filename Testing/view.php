@@ -7,9 +7,7 @@ $sql_query = "SELECT * FROM news ORDER BY timestamp DESC";
 $result = $db->query($sql_query);
 echo "<p><strong>All news: </strong>";
 while($row = $result->fetch_array()){
-  echo "News ID: " . $row['id'] . ", " . $row['headline'] . "</p>" .
-      "Writer: " . $row['name'] . ", Time: " $row['timestamp'] . "</p>" .
-      $row['story'] . "</p>";
+  echo "News ID: " . $row['id'] . ", " . $row['headline'] . "</p>" . "Writer: " . $row['name'] . ", Time: " $row['timestamp'] . "</p>" . $row['story'] . "</p>";
 }
 $result->close();
    $db->close();
