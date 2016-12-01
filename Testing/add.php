@@ -1,4 +1,3 @@
-
 <?php
 include("dbconnect.php");
 // test if connection was established, and print any errors
