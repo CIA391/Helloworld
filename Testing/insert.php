@@ -24,7 +24,7 @@ $email = mysqli_real_escape_string($link, $_POST['email']);
  
 // attempt insert query execution
 $sql = "INSERT INTO news (id, headline, story, name, email, timestamp) VALUES ('$id', '$headline', '$story', '$name', '$email', NOW())";
-if(mysqli_query($link, $sql)){
+if(mysqli_query($sql)){
     echo "Records added successfully.";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
