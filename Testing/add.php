@@ -15,8 +15,7 @@ if(!$sql_query){
    echo('Error adding news: ' . $mysql_error());
    exit();
 }else{
-mysql_close($bd);
-echo('Success!<br><a href="add.php">Click here</a> to add more news.<br><a href="edit.php">Click here</a> to edit news.<br><a href="../index.php">Click here</a> to return to the main page.');
+mysql_close($db);
 }
 
 ?>
