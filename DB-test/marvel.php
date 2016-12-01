@@ -21,7 +21,7 @@ $result = $db->query($sql_query);
 echo "<p><strong>All Movies: </strong>";
 while($row = $result->fetch_array()){
    // print out fields from row of data
-  echo $row['title']  . " | " . ['notes'];
+  echo $row['title']  . " | " . $row['notes'] . " | ";
 }
 echo "</p>";
 $result->close();
