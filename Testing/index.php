@@ -1,16 +1,14 @@
-<?php
-include("dbconnect.php");
-// test if connection was established, and print any errors
-if (!$db) {
-    die('Connect Error: ' . mysqli_connect_errno());
-}
-
-// create a SQL query as a string
-$sql_query = "SELECT * FROM news ORDER BY timestamp DESC";
-$result = $db->query($sql_query);
-echo "<p><strong>All news: </strong>";
-while($row = $result->fetch_array()){
-  echo $row['id'] . $row['headline'] . $row['story'] . $row['name'] . $row['email'] . $row['stimestamp'] . "</p>";
-}
-$result->close();
-   $db->close();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testy test</title>
+</head>
+<body>
+<p>Week 7</p>
+<ul>
+    <li><a href="/Testing/view.php">Test 1</a></li>
+    <li><a href="/Testing/add.php">Test 1</a></li>
+    <li><a href="/Week7/edit.html">Maps</a></li>
+</ul>
+</body>
