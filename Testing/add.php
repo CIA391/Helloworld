@@ -9,7 +9,6 @@ include("dbconnect.php");
 if (!$db) {
     die('Connect Error: ' . mysqli_connect_errno());
 }   
-
 $sql_query = "INSERT INTO news(name, email, headline, story, timestamp)VALUES('$name', '$email', '$headline', '$story', NOW())";
 if(!$sql_query){
    echo('Error adding news: ' . $mysql_error());
@@ -18,7 +17,6 @@ if(!$sql_query){
 mysql_close($bd);
 echo('Success!<br><a href="add.php">Click here</a> to add more news.<br><a href="edit.php">Click here</a> to edit news.<br><a href="../index.php">Click here</a> to return to the main page.');
 }
-
 ?>
 <!--<form name="form1" method="post" action="<? echo $PHP_SELF; ?>"-->
 <form action= "<? echo $PHP_SELF; ?>" method="post">
@@ -31,5 +29,4 @@ echo('Success!<br><a href="add.php">Click here</a> to add more news.<br><a href=
 <? } ?>
 </body>
 </html>
-
     
