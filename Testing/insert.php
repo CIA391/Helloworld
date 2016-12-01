@@ -6,8 +6,7 @@ $link = include("dbconnect.php");
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
-} else {
- echo("This connection works");}
+}
 
 $sql_query = "SELECT * FROM news ORDER BY timestamp DESC";
 $result = $db->query($sql_query);
@@ -24,7 +23,7 @@ $name = mysqli_real_escape_string($link, $_POST['name']);
 $email = mysqli_real_escape_string($link, $_POST['email']);
  
 // attempt insert query execution
-$sql = "INSERT INTO news (first_name, last_name, email_address) VALUES ('$id', '$headline', '$story', '$name', '$email, NOW())";
+$sql = "INSERT INTO news (id, headline, story, name, email, timestamp) VALUES ('$id', '$headline', '$story', '$name', '$email, NOW())";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
