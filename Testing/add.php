@@ -15,7 +15,7 @@ if(!$sql_query){
    echo('Error adding news: ' . $mysql_error());
    exit();
 }else{
-mysql_close($db);
+mysql_close($bd);
 }
 
 ?>
