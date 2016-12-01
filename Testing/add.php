@@ -6,7 +6,8 @@ if (!$db) {
 }   
 $sql_query = "INSERT INTO news(name, email, headline, story, timestamp)VALUES('$name', '$email', '$headline', '$story', NOW())";
 ?>
-<form action="displaySuperhero.php" method="post">
+<!--<form name="form1" method="post" action="<? echo $PHP_SELF; ?>"-->
+<form action= "<? echo $PHP_SELF; ?>" method="post">
     Username:<input type="text" name="name"><br>
     Email:<input type="text" name="email"><br>
     Headline:<input type="text" name="headline"><br>
@@ -14,3 +15,4 @@ $sql_query = "INSERT INTO news(name, email, headline, story, timestamp)VALUES('$
     <input type="submit" value="Submit">
 </form>
 
+    
