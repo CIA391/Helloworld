@@ -6,7 +6,7 @@ if (!$db) {
 }
 
 // create a SQL query as a string
-$sql_query = "SELECT * FROM news";
+$sql_query = "SELECT * FROM news ORDER BY timestamp DESC";
 $result = $db->query($sql_query);
 echo "<p><strong>All news: </strong>";
 while($row = $result->fetch_array()){
