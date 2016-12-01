@@ -6,7 +6,8 @@ $link = include("dbconnect.php");
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
-} 
+} else {
+ echo("This connection works");}
 
 $sql_query = "SELECT * FROM news ORDER BY timestamp DESC";
 $result = $db->query($sql_query);
