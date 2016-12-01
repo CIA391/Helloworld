@@ -1,41 +1,16 @@
-<html>
-<head>
-<title>View News</title>
-<meta http-equiv="Content-Type" content="text/html; charset="iso"-8859-1">
-</head> 
-<body>
-<?
-$link = new mysqli (
-    'us-cdbr-azure-southcentral-f.cloudapp.net',
-    'bf9afe7c1df5c8',
-    '5d557954',
-    'acsm_0dd8805538e55e7');
-if(!$link){
-   echo('Error connecting to the database: ' . mysql_error());
-   exit();
+<?php
+include("dbconnect.php");
+// test if connection was established, and print any errors
+if (!$db) {
+    die('Connect Error: ' . mysqli_connect_errno());
 }
-$db = @mysql_selectdb('mydatabase');
-if(!$db){
-   echo('Error selecting database: ' . mysql_error());
-   exit();
+
+// create a SQL query as a string
+$sql_query = "SELECT * FROM news";
+$result = $db->query($sql_query);
+echo "<p><strong>All news: </strong>";
+while($row = $result->fetch_array()){
+  echo $row['id'] . $row['headline'] . $row['story'] . $row['name'] . $row['email'] . $row['stimestamp'] . "</p>";
 }
-$query = "SELECT id, headline, timestamp FROM news ORDER BY timestamp DESC";
-$result = @mysql_query($query);
-if(!$result){
-   echo('Error selecting news: ' . mysql_error());
-   exit();
-}
-if (mysql_num_rows($result) > 0){
-    while($row = mysql_fetch_object($result))
-    {
-    ?>
-   <font size="-1"><b><? echo $row->headling; ?></b> <i><? echo formatDate($row->timestamp); ?></i></font>
-    <?
-    }
-}else{
-   ?>
-   <font size="-2">No news in the database</font>
-<? }
-   mysql_close($link); ?>
-</body>
-</html>
+$result->close();
+   $db->close();
