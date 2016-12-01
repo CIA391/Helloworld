@@ -5,9 +5,8 @@ if (!$db) {
     die('Connect Error: ' . mysqli_connect_errno());
 }   
 
-$query = "INSERT INTO news(name, email, headline, story, timestamp)VALUES('$name', '$email', '$headline', '$story', NOW())";
-$result = @mysql_query($query);
-if(!$result){
+$sql_query = "INSERT INTO news(name, email, headline, story, timestamp)VALUES('$name', '$email', '$headline', '$story', NOW())";
+if(!$sql_query){
    echo('Error adding news: ' . $mysql_error());
    exit();
 }else{
