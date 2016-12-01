@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Testy test</title>
+    <title>News web</title>
 </head>
 <body>
-<p>Week 7</p>
+<p>The practice code for the news</p>
 <ul>
-    <li><a href="/Testing/view.php">Test 1</a></li>
-    <li><a href="/Testing/add.php">Test 1</a></li>
-    <li><a href="/Testing/edit.html">Maps</a></li>
+    <li><a href="/Testing/view.php">view</a></li>
+    <li><a href="/Testing/add.php">add</a></li>
+    <li><a href="/Testing/edit.html">edit</a></li>
 </ul>
 </body>
