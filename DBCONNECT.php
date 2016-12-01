@@ -6,3 +6,7 @@ $db = new mysqli (
     '5d557954',
 'acsm_0dd8805538e55e7'
 );
+
+if (!$db) {
+    die('Connect Error: ' . mysqli_connect_errno());
+}
