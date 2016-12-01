@@ -9,12 +9,14 @@ if($link === false){
 }
  
 // Escape user inputs for security
-$first_name = mysqli_real_escape_string($link, $_POST['firstname']);
-$last_name = mysqli_real_escape_string($link, $_POST['lastname']);
-$email_address = mysqli_real_escape_string($link, $_POST['email']);
+$id = mysqli_real_escape_string($link, $_POST['id']);
+$headline = mysqli_real_escape_string($link, $_POST['headline']);
+$story = mysqli_real_escape_string($link, $_POST['story']);
+$name = mysqli_real_escape_string($link, $_POST['name']);
+$email = mysqli_real_escape_string($link, $_POST['email']);
  
 // attempt insert query execution
-$sql = "INSERT INTO persons (first_name, last_name, email_address) VALUES ('$first_name', '$last_name', '$email_address')";
+$sql = "INSERT INTO news (first_name, last_name, email_address) VALUES ('$id', '$headline', '$story', '$name', '$email, NOW())";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
