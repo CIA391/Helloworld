@@ -9,6 +9,6 @@
 <ul>
     <li><a href="/Testing/view.php">Test 1</a></li>
     <li><a href="/Testing/add.php">Test 1</a></li>
-    <li><a href="/Week7/edit.html">Maps</a></li>
+    <li><a href="/Testing/edit.html">Maps</a></li>
 </ul>
 </body>
