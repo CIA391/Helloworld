@@ -1,24 +1,10 @@
-<html>
-<head>
-<title>Add News</title>
-<meta http-equiv="Content-Type" content="text/html; charset="iso"-8859-1">
-</head>
-<body>
-<?
-if(isset($add_n)){
-   $link = @mysql_connect('us-cdbr-azure-southcentral-f.cloudapp.net',
-    'bf9afe7c1df5c8',
-    '5d557954',
-    'acsm_0dd8805538e55e7');
-   if(!$link){
-      echo('Error connecting to the database: ' . $mysql_error());
-      exit();
-   }
-   $db = @mysql_selectdb('mydatabase');
-   if(!$db){
-      echo('Error selecting database: ' . $mysql_error());
-      exit();
-   }
+<?php
+include("dbconnect.php");
+// test if connection was established, and print any errors
+if (!$db) {
+    die('Connect Error: ' . mysqli_connect_errno());
+}   
+   
    $query = "INSERT INTO news(name, email, headline, story, timestamp)VALUES('$name', '$email', '$headline', '$story', NOW())";
    $result = @mysql_query($query);
    if(!$result){
@@ -60,6 +46,10 @@ if(isset($add_n)){
     </tr>
   </table>
   </form>
+
+
+
+$result->close();
+   $db->close();
 <? } ?>
-</body>
-</html>
+
