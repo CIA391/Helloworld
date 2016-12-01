@@ -6,6 +6,13 @@ $link = include("dbconnect.php");
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
+} 
+
+$sql_query = "SELECT * FROM news ORDER BY timestamp DESC";
+$result = $db->query($sql_query);
+echo "<p><strong>All news: </strong>";
+while($row = $result->fetch_array()){
+  echo $row['id'] . $row['headline'] . $row['story'] . $row['name'] . $row['email'] . $row['stimestamp'] . "</p>";
 }
  
 // Escape user inputs for security
