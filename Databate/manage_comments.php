@@ -9,7 +9,7 @@ if( $_POST )
 		'acsm_0dd8805538e55e7');
 	if (!$con)
   {
-    die('Could not connect: ' . mysql_error());
+    die('Could not connect: ' . mysqli_connect_errno());
   }
 	 mysql_select_db("acsm_0dd8805538e55e7", $con);
 
