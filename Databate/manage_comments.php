@@ -1,8 +1,13 @@
-			<?php
-				include("dbconnect.php");
-				if (!$db) {
-    					die('Connect Error: ' . mysqli_connect_errno());
-				}
+<?php
+
+if( $_POST )
+{
+	$con = include("dbconnect.php");
+	if (!$con)
+  {
+    die('Could not connect: ' . mysql_error());
+  }
+	 mysql_select_db("acsm_0dd8805538e55e7", $con);
 
   $users_name = $_POST['name'];
   $users_email = $_POST['email'];
