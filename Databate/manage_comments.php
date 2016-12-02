@@ -2,7 +2,7 @@
 
 if( $_POST )
 {
-	$con = include("dbconnect.php");
+	$con = 'us-cdbr-azure-southcentral-f.cloudapp.net', 'bf9afe7c1df5c8', '5d557954');
 	if (!$con)
   {
     die('Could not connect: ' . mysql_error());
