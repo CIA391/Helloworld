@@ -11,9 +11,9 @@ if (!$con)
  
 mysql_select_db("bf9afe7c1df5c8", $con);
  
-$sql="INSERT INTO nametable (fname, lname)
+$sql="INSERT INTO nametable (firstname, lastname)
 VALUES
-('$_POST[fname]','$_POST[lname]')";
+('$_POST[firstname]','$_POST[lastname]')";
  
 if (!mysql_query($sql,$con))
   {
