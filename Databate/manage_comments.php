@@ -2,11 +2,7 @@
 
 if( $_POST )
 {
-	$con = new mysqli (
-    		'us-cdbr-azure-southcentral-f.cloudapp.net',
-    		'bf9afe7c1df5c8',
-    		'5d557954',
-		'acsm_0dd8805538e55e7');
+	$con = include("dbconnect.php");
 	if (!$con)
   {
     die('Could not connect: ' . mysqli_connect_errno());
