@@ -1,4 +1,4 @@
-html>
+<html>
 <body>
 <h1>A small example page to insert some data in to the MySQL database using PHP</h1>
 <form action="insert.php" method="post">
@@ -8,6 +8,7 @@ Lastname: <input type="text" name="lastname" /><br><br>
 <input type="submit" />
 </form>
 <?php
+ 
 $con = mysql_connect("us-cdbr-azure-southcentral-f.cloudapp.net","bf9afe7c1df5c8","5d557954");
 if (!$con)
   {
@@ -16,9 +17,14 @@ if (!$con)
  
 mysql_select_db("acsm_0dd8805538e55e7", $con);
  
+if(isset($_POST['submit'])){
+ $firstname = $_POST['firstname'];
+ $lastname = $_POST['lastname'];
+}
+ 
 $sql="INSERT INTO nametable (firstname, lastname)
 VALUES
-('$_POST[firstname]','$_POST[lastname]')";
+('$_POST['firstname']','$_POST['lastname']')";
  
 if (!mysql_query($sql,$con))
   {
