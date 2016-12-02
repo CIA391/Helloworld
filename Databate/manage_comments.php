@@ -5,7 +5,7 @@ if( $_POST )
 	$con = include("dbconnect.php");
 	if (!$con)
   {
-    die('Could not connect: ' . mysqli_connect_errno());
+    die('Could not connect: ' . mysql_error());
   }
 	 mysql_select_db("acsm_0dd8805538e55e7", $con);
 
