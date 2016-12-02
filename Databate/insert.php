@@ -3,7 +3,7 @@
  
  
 <?php
-$con = mysql_connect("us-cdbr-azure-southcentral-f.cloudapp.net","bf9afe7c1df5c8","5d557954");
+$con = mysql_connect("kkk","bf9afe7c1df5c8","5d557954");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
