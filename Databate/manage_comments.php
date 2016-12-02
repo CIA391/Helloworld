@@ -1,12 +1,14 @@
 <?
 if( $_POST )
 {
-  $con = include("db_connect.php");
+  $con = mysql_connect("us-cdbr-azure-southcentral-f.cloudapp.net","acsm_0dd8805538e55e7","5d557954");
 
   if (!$con)
   {
     die('Could not connect: ' . mysql_error());
   }
+
+  mysql_select_db("iacsm_0dd8805538e55e7", $con);
 
   $users_name = $_POST['name'];
   $users_email = $_POST['email'];
