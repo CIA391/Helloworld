@@ -3,13 +3,13 @@
  
  
 <?php
-$con = mysql_connect("kkk","bf9afe7c1df5c8","5d557954");
+$con = mysql_connect("us-cdbr-azure-southcentral-f.cloudapp.net","bf9afe7c1df5c8","5d557954");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
   }
  
-mysql_select_db("bf9afe7c1df5c8", $con);
+mysql_select_db("acsm_0dd8805538e55e7", $con);
  
 $sql="INSERT INTO nametable (firstname, lastname)
 VALUES
