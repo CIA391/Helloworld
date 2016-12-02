@@ -1,14 +1,12 @@
 <?
 if( $_POST )
 {
-  $con = mysql_connect("localhost","inmoti6_myuser","mypassword");
+  $con = include("db_connect.php");
 
   if (!$con)
   {
     die('Could not connect: ' . mysql_error());
   }
-
-  mysql_select_db("inmoti6_mysite", $con);
 
   $users_name = $_POST['name'];
   $users_email = $_POST['email'];
