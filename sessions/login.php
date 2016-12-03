@@ -1,10 +1,18 @@
-<?php
-$username = $_POST["name"];
-$password = $_POST["password"];
-if ($username =="username" && $password=="password")
-{
-    session_start();
-    $_SESSION['access_level_session'] = "standarduser";
-}
-header('Location: loggedIn.php');
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<form action="checklogin.php" method="post">
+    Name:<br>
+    <input type="text" name="name">
+    <br>
+    Password:<br>
+    <input type="password" name="password">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
