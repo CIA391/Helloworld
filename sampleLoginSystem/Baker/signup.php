@@ -6,12 +6,33 @@ $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
+//This checks if there is any spaces in the user entered data
+if (strpos($myusername, ' ') !== false) {
+    $userspace = 'true';
+}
+if (strpos($mypassword, ' ') !== false) {
+    $passspace = 'true';
+}
+if (strpos($passwordcheck, ' ') !== false) {
+    $pass2space ='true';
+}
+
+//This tests to see if there is any spaces in the text
+if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
+    session_start();
+    $_SESSION['Signupfail'];
+    header("location:signupform.php");
+    die();
+}
+
+//This checks to see if the fields are empty or not.
 if(empty($username) || empty($password) || empty($passwordcheck))
     {
     session_start();
     $_SESSION['Signupfail'] = "Fail";
     header("location:signupform.php");
-    }
+    die();
+}
 
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
@@ -32,5 +53,6 @@ if($mypassword==$passwordcheck)
     session_start();
     $_SESSION['Signupfail'] = "Fail";
     header("location:signupform.php");
+    die();
 }
 ?>
