@@ -21,13 +21,13 @@ if (isset($_SESSION['username']))
         echo "<p>User type is " . $row['userType'] . "</p>";
     }
     ?>
-    <--This is a link to logout the site-->
+    <!--This is a link to logout the site-->
     <a href="logout.php">Logout</a>
     
     <?
 } else {
 ?>
-    <--This is the form used to login-->
+    <!--This is the form used to login-->
     <h1>Login</h1>
     <form method="post" action="checklogin.php">
     <p><input type="text" name="username" value="" placeholder="Username please"></p>
