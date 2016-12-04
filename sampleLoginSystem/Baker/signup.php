@@ -23,7 +23,7 @@ if ($mypassword==$passwordcheck)
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
     session_start();
-    $_SESSION['Signupfail'] = "Fail";
+    $_SESSION['Signupfail'];
     header("location:signupform.php");
 }
 ?>
