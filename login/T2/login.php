@@ -6,12 +6,10 @@
 	
 	$myusername = stripslashes($myusername);
 	$mypassword = stripslashes($mypassword);
-	echo "$myusername";
-	echo "$mypassword";
 	$query = "SELECT * FROM admin WHERE username='$myusername' and password='$mypassword'";
 	$result = mysql_query($query);
 	$count = mysql_num_rows($result);
-	
+	echo "$count";
 	mysql_close();
 	
 	//if($count==1){
