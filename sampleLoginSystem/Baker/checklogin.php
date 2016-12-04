@@ -2,13 +2,13 @@
 
 include ("db_connect.php");
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+$myusername = $_POST["username"];
+$mypassword = $_POST["password"];
 
-//$username = mysqli_real_escape_string($username);
-//$password = mysqli_real_escape_string($password);
+//$myusername = mysqli_real_escape_string($myusername);
+//$mypassword = mysqli_real_escape_string($mypassword);
 
-$sql = "SELECT * FROM users WHERE username ='". $username ."' and password ='". $password . "'";
+$sql = "SELECT * FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 
 $result = $db->query($sql);
 $checker = 0;
@@ -19,9 +19,9 @@ while($row = $result->fetch_array()) {
 
 if($checker==1){
     session_start();
-    $_SESSION['username'] = $username;
+    $_SESSION['username'] = $myusername;
     header("location:index.php");
 } else {
-    echo "Incorrect user credetials";
+    echo "Incorrect user credentials";
 }
 ?>
