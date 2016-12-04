@@ -2,9 +2,11 @@
  
 <?php
            $user = $_POST['n'];
+echo "$user";
            $pass = $_POST['p'];
+echo "$pass";
         #$sql = "INSERT into phplogin values(".$id.",'".$user."','".$pass."')";
-          $sql = "INSERT into phplogin values(default,'$user','$pass')";
+          $sql = "INSERT into users values(default,'$user','$pass')";
            $qury = mysql_query($sql);
  
         #  INSERT into phplogin values(
