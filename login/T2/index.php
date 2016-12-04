@@ -1,15 +1,13 @@
 <?php
 	include("DBCONNECT.php");
 	
-	$selected = mysql_select_db("login", $dbhandle);
-	
 	$myusername = $_POST['user'];
 	$mypassword = $_POST['pass'];
 	
 	$myusername = stripslashes($myusername);
 	$mypassword = stripslashes($mypassword);
 	
-	$query = "SELECT * FROM users WHERE Username='$myusername' and Password='$mypassword'";
+	$query = "SELECT * FROM admin WHERE username='$myusername' and password='$mypassword'";
 	$result = mysql_query($query);
 	$count = mysql_num_rows($result);
 	
