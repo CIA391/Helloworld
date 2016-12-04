@@ -6,10 +6,7 @@ $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
-
-
-//This checks if the text is blank or not
-if ($mypassword=="" || $mypassword=="" || $passwordcheck==""){
+if (!(empty($_POST['username'])) || !(empty($_POST['password']))){
     session_start();
     $_SESSION['Signupfail'];
     header("location:signupform.php");
