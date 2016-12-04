@@ -18,7 +18,7 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($baker == "1") {
-         session_register("myusername");
+         session_register("$myusername");
          $_SESSION['login_user'] = $myusername;
          
          header("location: welcome.php");
