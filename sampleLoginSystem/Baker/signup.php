@@ -35,7 +35,7 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
 }
 
 //This checks to see if the username is taken or not.
-$query = mysql_query("SELECT * FROM users WHERE Username='$myusername'");
+$query = mysql_query("SELECT * FROM users WHERE username='$myusername'");
 if(mysql_num_rows($query) > 0 ) { //check if there is already an entry for that username
     session_start();
     $_SESSION['Signupfail'] = "Fail4";
