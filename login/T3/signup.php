@@ -3,9 +3,8 @@
 <?php
            $user = $_POST['n'];
            $pass = $_POST['p'];
-           $id = $_POST['id'];
         #$sql = "INSERT into phplogin values(".$id.",'".$user."','".$pass."')";
-          $sql = "INSERT into phplogin values($id,'$user','$pass')";
+          $sql = "INSERT into phplogin values(default,'$user','$pass')";
            $qury = mysql_query($sql);
  
         #  INSERT into phplogin values(
