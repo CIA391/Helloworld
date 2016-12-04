@@ -24,11 +24,11 @@ if ($mypassword=="" || $mypassword=="" || $passwordcheck==""){
     $_SESSION['Signupfail'];
     header("location:signupform.php");
 }
-elseif($userspace=='true' || $passspace=='true' || $pass2space=='true')
-    session_start();
-    $_SESSION['Signupfail'];
-    header("location:signupform.php");
-}
+//elseif($userspace=='true' || $passspace=='true' || $pass2space=='true')
+//    session_start();
+//    $_SESSION['Signupfail'];
+//    header("location:signupform.php");
+//}
 elseif($mypassword==$passwordcheck)
 {
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
