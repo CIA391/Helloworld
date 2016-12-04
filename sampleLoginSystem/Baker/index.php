@@ -7,16 +7,12 @@
 <body>
 
 <?
-//Opens up a session
 session_start();
 
 include ("db_connect.php");
 
-//Check to see if the 'username' session variable is set.
-
-if (isset($_SESSION['username'])) //SESSION DOES EXIST
+if (isset($_SESSION['username']))
 {
-
     echo "<p>Hello " . $_SESSION['username'] . "</p>";
     $sql = "SELECT * FROM users WHERE username='". $_SESSION['username'] . "'";
     $result = $db->query($sql);
@@ -26,13 +22,9 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
     }
     ?>
     <a href="logout.php">Logout</a>
+    
     <?
-
-
-}
-else //SESSION DOESNT EXIST
-{
-
+} else {
 ?>
 
     <h1>My Login Form</h1>
@@ -43,9 +35,7 @@ else //SESSION DOESNT EXIST
     </form>
     <a href="signup.php">Signup</a>
 
-<?
-}
-?>
+<? } ?>
 
 </body>
 </html>
