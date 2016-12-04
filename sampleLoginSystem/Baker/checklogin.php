@@ -20,7 +20,7 @@ while($row = $result->fetch_array()) {
     $checker = 1;
 }
 
-//This deals with if any matched or not.
+//This deals with if any matched or not. And send the user back to the index page
 if($checker==1){
     session_start();
     $_SESSION['username'] = $myusername;
