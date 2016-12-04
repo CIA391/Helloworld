@@ -6,8 +6,29 @@ $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
+if (strpos($myusername, ' ') !== false) {
+    $userspace 'true';
+}
+if (strpos($mypassword, ' ') !== false) {
+    $passspace 'true';
+}
+if (strpos($passwordcheck, ' ') !== false) {
+    $pass2space 'true';
+}
+
+
 //This checks if the password is 100% what the user typed
-if ($mypassword==$passwordcheck)
+if ($mypassword=="" || $mypassword=="" || $passwordcheck==""){
+    session_start();
+    $_SESSION['Signupfail'];
+    header("location:signupform.php");
+}
+elseif($userspace=='true' || $passspace=='true' || $pass2space=='true')
+    session_start();
+    $_SESSION['Signupfail'];
+    header("location:signupform.php");
+}
+elseif($mypassword==$passwordcheck)
 {
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 
