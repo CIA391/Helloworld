@@ -34,6 +34,18 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     die();
 }
 
+//This checks to see if the username is taken or not.
+$query = mysql_query("SELECT * FROM users WHERE Username='$myusername'");
+if(mysql_num_rows($query) > 0 ) { //check if there is already an entry for that username
+    session_start();
+    $_SESSION['Signupfail'] = "Fail4";
+    header("location:signupform.php");
+    die();
+}
+
+$sql = "SELECT * FROM users WHERE username='". $myusername . "'";
+$result = $db->query($sql);
+
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
 {
