@@ -9,7 +9,7 @@ $passwordcheck = $_POST["passwordcheck"];
 if(empty($username) || empty($password) || empty($passwordcheck))
     {
     session_start();
-    $_SESSION['Signupfail'];
+    $_SESSION['Signupfail'] = "Fail";
     header("location:signupform.php");
     echo "You did not fill out the required fields.";
     die();  // Note this
@@ -32,7 +32,7 @@ if($mypassword==$passwordcheck)
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
     session_start();
-    $_SESSION['Signupfail'];
+    $_SESSION['Signupfail'] = "Fail";
     header("location:signupform.php");
 }
 ?>
