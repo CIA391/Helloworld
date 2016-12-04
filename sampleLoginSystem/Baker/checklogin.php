@@ -11,13 +11,13 @@ $password = $_POST["password"];
 $sql="SELECT * FROM users WHERE username='". $username ."' and password='". $password . "'";
 
 $result = $db->query($sql);
-$loginSuccessful = 0;
+$checker = 0;
 
 while($row = $result->fetch_array()) {
-    $loginSuccessful = 1;
+    $checker = 1;
 }
 
-if($loginSuccessful==1){
+if($checker==1){
 
     session_start();
     $_SESSION['username'] = $username;
