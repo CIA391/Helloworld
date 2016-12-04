@@ -20,12 +20,11 @@ if (isset($_SESSION['username']))
         echo "<p>User type is " . $row['userType'] . "</p>";
     }
     ?>
+    
     <a href="logout.php">Logout</a>
     
     <?
-}
-else
-{
+} else {
 ?>
     <h1>Login</h1>
     <form method="post" action="checklogin.php">
@@ -33,9 +32,9 @@ else
     <p><input type="password" name="password" value="" placeholder="Password"></p>
     <p class="submit"><input type="submit" name="commit" value="Login"></p>
     </form>
+    
     <a href="signupform.php">Signup</a>
-<?
-}
-?>
+    
+<? } ?>
 </body>
 </html>
