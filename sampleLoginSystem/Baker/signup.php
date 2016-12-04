@@ -1,11 +1,12 @@
 <?php
-
 include ("db_connect.php");
 
+//This is the fields from the signup form
 $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
+//This checks if the password is 100% what the user typed
 if ($mypassword==$passwordcheck)
 {
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
@@ -21,6 +22,7 @@ if ($mypassword==$passwordcheck)
 
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
-    echo "Passwords do not match";
+    session_start();
+    header("location:signupform.php");
 }
 ?>
