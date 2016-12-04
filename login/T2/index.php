@@ -1,38 +1,25 @@
-<?
-define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
-$rules = array(
-    //
-    //main pages
-    //
-    'about' => "/about",
-    'contactus' => "/contactus",
-    'blog' => "/blog",
-    'blog_article' => "/blog/(?'blogID'[\w\-]+)",
-    //
-    //Admin Pages
-    //
-    'login' => "/login",
-    'create_article' => "/createarticle",
-    'view' => "/view",
-    'logout' => "/logout",
-    'register' => "/register",
-    //
-    // Home Page
-    //
-    'home' => "/"
-    //
-    // Style
-    //
-);
-$uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
-$uri = '/' . trim(str_replace($uri, '', $_SERVER['REQUEST_URI']), '/');
-$uri = urldecode($uri);
-foreach ($rules as $action => $rule) {
-    if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
-        include(INCLUDE_DIR . $action . '.php');
-        exit();
-    }
-}
-// nothing is found so handle the 404 error
-include(INCLUDE_DIR . '404.php');
+<?php
+	include("DBCONNECT.php");
+	
+	$selected = mysql_select_db("login", $dbhandle);
+	
+	$myusername = $_POST['user'];
+	$mypassword = $_POST['pass'];
+	
+	$myusername = stripslashes($myusername);
+	$mypassword = stripslashes($mypassword);
+	
+	$query = "SELECT * FROM users WHERE Username='$myusername' and Password='$mypassword'";
+	$result = mysql_query($query);
+	$count = mysql_num_rows($result);
+	
+	mysql_close();
+	
+	if($count==1){
+		$seconds = 5 + time();
+		setcookie(loggedin, date("F jS - g:i a"), $seconds);
+		header("location:login_success.php");
+	}else{
+		echo 'Incorrect Username or Password';
+	}
 ?>
