@@ -1,23 +1,12 @@
-<?php
-	include("DBCONNECT.php");
-	
-	$myusername = $_POST['user'];
-	$mypassword = $_POST['pass'];
-	
-	$myusername = stripslashes($myusername);
-	$mypassword = stripslashes($mypassword);
-	
-	$query = "SELECT * FROM admin WHERE username='$myusername' and password='$mypassword'";
-	$result = mysql_query($query);
-	$count = mysql_num_rows($result);
-	
-	mysql_close();
-	
-	if($count==1){
-		$seconds = 5 + time();
-		setcookie(loggedin, date("F jS - g:i a"), $seconds);
-		header("location:login_success.php");
-	}else{
-		echo 'Incorrect Username or Password';
-	}
-?>
+<html>
+	<body>
+		<form action="login.php" method="POST">
+			<p>Username:</p><input type="text" name="user" />
+			<p>Password:</p><input type="password" name="pass" />
+			<br />
+			<input type="submit" value="Login" />
+		</form>
+		
+		<a href="new_user.php">Signup Here!</a>
+	</body>
+</html>
