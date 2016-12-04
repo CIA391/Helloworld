@@ -20,7 +20,7 @@ if (strpos($passwordcheck, ' ') !== false) {
 //This tests to see if there is any spaces in the text
 if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
     session_start();
-    $_SESSION['Signupfail'];
+    $_SESSION['Signupfail'] = "Fail1";
     header("location:signupform.php");
     die();
 }
@@ -29,7 +29,7 @@ if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
 if(empty($username) || empty($password) || empty($passwordcheck))
     {
     session_start();
-    $_SESSION['Signupfail'] = "Fail";
+    $_SESSION['Signupfail'] = "Fail2";
     header("location:signupform.php");
     die();
 }
@@ -51,7 +51,7 @@ if($mypassword==$passwordcheck)
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
     session_start();
-    $_SESSION['Signupfail'] = "Fail";
+    $_SESSION['Signupfail'] = "Fail3";
     header("location:signupform.php");
     die();
 }
