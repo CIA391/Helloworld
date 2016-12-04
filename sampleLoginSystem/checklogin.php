@@ -2,31 +2,32 @@
 
 include ("db_connect.php");
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+$myusername = $_POST["username"];
+$mypassword = $_POST["password"];
 
-//$username = mysqli_real_escape_string($username);
-//$password = mysqli_real_escape_string($password);
+//Need to possibly get this working for security
+//$myusername = mysqli_real_escape_string($myusername);
+//$mypassword = mysqli_real_escape_string($mypassword);
+//$myusername = stripcslashes($myusername);
+//$mypassword = stripcslashes($mypassword);
 
-$sql="SELECT * FROM users WHERE username='". $username ."' and password='". $password . "'";
+$sql_query = "SELECT * FROM users WHERE username='". $myusername ."' and password='". $mypassword . "'";
 
 $result = $db->query($sql);
-
-$loginSuccessful = 0;
+$checker = 0;
 
 while($row = $result->fetch_array()) {
-    $loginSuccessful = 1;
+    $checker = 1;
 }
 
-if($loginSuccessful==1){
-
+if($checker == 1){
     session_start();
-    $_SESSION['username'] = $username;
+    $_SESSION['username'] = $myusername;
     header("location:index.php");
 
 }
 else {
-    echo "Wrong Username or Password";
+    //Either credentials or details to be echoed. This is a minor detail but hey ho
+    echo "Sorry wrong user credentials";
 }
-
 ?>
