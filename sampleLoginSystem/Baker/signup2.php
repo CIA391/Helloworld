@@ -1,15 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: michaelcrabb
- * Date: 14/12/2015
- * Time: 11:22
- */
 
-//Includes the Database connection script
 include ("db_connect.php");
 
-//GETS THE USERNAME AND PASSWORD FROM PREVIOUS PAGE
 $username = $_POST["username"];
 $password = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
@@ -29,10 +21,7 @@ if ($password==$passwordcheck)
     header("location:index.php");
 
     $sql = "INSERT INTO users (username, password, email, userType) VALUES ('". $username ."', '" .$password."', '".$email."', 'reader')";
-
-}
-else
-{
+} else {
     echo "Passwords do not match";
 }
 ?>
