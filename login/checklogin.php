@@ -1,5 +1,5 @@
 <?php
-
+if(isset($_POST['submit'])) {
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -21,5 +21,13 @@ error_reporting(E_ALL);
     } else {
     echo 'no access';
     }
+    }
     
 ?>
+<form method='post'>
+  <label>UserName  :</label>
+  <input type = "text" name = "username" class = "box"/><br /><br />
+  <label>Password  :</label>
+  <input type = "password" name = "password" class = "box" /><br/><br />
+  <input type = "submit" value = " Submit "/><br />
+</form>
