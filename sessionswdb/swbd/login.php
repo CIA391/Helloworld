@@ -1,5 +1,4 @@
 <?php
-ob_start();
 	include("DBCONNECT.php");
      	session_start();
    
