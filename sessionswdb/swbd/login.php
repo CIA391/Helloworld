@@ -5,14 +5,11 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-	echo "$myusername";
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      	echo "$mypassword";
+      $myusername = mysqli_real_escape_string($db,$_POST['username']);	
+      $mypassword = mysqli_real_escape_string($db,$_POST['password']);       	
 	   
       $sql = "SELECT * FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
       $result = mysqli_query($db,$sql);
-	   echo "$result";
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       	
