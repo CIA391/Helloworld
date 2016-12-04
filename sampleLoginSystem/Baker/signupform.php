@@ -13,7 +13,15 @@
     
     if (isset($_SESSION['Signupfail']))
     {
-        echo "<p><font color='red'>Hello please ensure you fill the bo</font></p>";
+        if ($jives == "Fail1"){
+            echo "<p><font color='red'>Please ensure you dont use spaces in your username or password.</font></p>";
+        } elseif ($jives == "Fail2"){
+            echo "<p><font color='red'>Please ensure you fill all the fields.</font></p>";
+        }elseif ($jives == "Fail3"){
+            echo "<p><font color='red'>Please ensure the password fields match.</font></p>";
+        }elseif ($jives == "Fail4"){
+            echo "<p><font color='red'>Username already taken.</font></p>";
+        }
     }
     ?>
     <form method="post" action="signup.php">
