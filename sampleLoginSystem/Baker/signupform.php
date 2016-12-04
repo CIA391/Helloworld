@@ -10,7 +10,7 @@
     session_start();
     if (isset($_SESSION['Signupfail']))
     {
-        echo "<p><font color='red'>Hello please enter the password you want to use in both password boxes</font></p>";
+        echo "<p><font color='red'>Hello please ensure you fill the boxes, enter password you want to use in both password boxes. And dont use empty spaces.</font></p>";
     }
     ?>
     <form method="post" action="signup.php">
