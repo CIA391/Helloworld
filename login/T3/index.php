@@ -4,7 +4,7 @@
     <title>Login Page</title>
 </head>
 <body>
-<form action="signup.php" method="post">
+<form action="signin.php" method="post">
     Name:<input type="text" name="username"><br>
     Password:<input type="password" name="password"><br><br>
     <input type="submit" value="Submit">
