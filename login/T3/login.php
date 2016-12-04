@@ -13,7 +13,7 @@ if(isset($_POST['submit'])) {
 	}
 
 	function chckusername($username, $password){
-		include_once 'sql.php';
+		include 'DBCONNECT.php';
 		$check = "SELECT * FROM users WHERE username='$username'";
 		$check_q = mysql_query($check) or die("<div class='loginmsg'>Error on checking Username<div>");
 		if (mysql_num_rows($check_q) == 1) {
@@ -24,6 +24,7 @@ if(isset($_POST['submit'])) {
 		}
 	}
 	function chcklogin($username, $password){
+		include 'DBCONNECT.php';
 		$login = "SELECT * FROM users WHERE username='$username'  and password='$password'";
 		$login_q = mysql_query($login) or die('Error on checking Username and Password');
 		// Mysql_num_row is counting table row
