@@ -5,8 +5,11 @@ include ("db_connect.php");
 $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 
+//Need to possibly get this working for security
 //$myusername = mysqli_real_escape_string($myusername);
 //$mypassword = mysqli_real_escape_string($mypassword);
+//$myusername = stripcslashes($myusername);
+//$mypassword = stripcslashes($mypassword);
 
 $sql = "SELECT * FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 
