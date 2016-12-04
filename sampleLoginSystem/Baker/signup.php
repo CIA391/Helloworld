@@ -26,7 +26,7 @@ if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
 }
 
 //This checks to see if the fields are empty or not.
-if(empty($username) || empty($password) || empty($passwordcheck))
+if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     {
     session_start();
     $_SESSION['Signupfail'] = "Fail2";
