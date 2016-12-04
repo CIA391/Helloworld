@@ -6,14 +6,15 @@ $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
+//This checks if there is any spaces in the user entered data
 if (strpos($myusername, ' ') !== false) {
-    $userspace 'true';
+    $userspace == 'true';
 }
 if (strpos($mypassword, ' ') !== false) {
-    $passspace 'true';
+    $passspace == 'true';
 }
 if (strpos($passwordcheck, ' ') !== false) {
-    $pass2space 'true';
+    $pass2space =='true';
 }
 
 
