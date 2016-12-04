@@ -15,7 +15,6 @@
       
       if ($row['username'] == $myusername && $row['passcode'] == $mypassword ){
 	      echo "you got in ". $row['username'];
-	      session_register(myusername);
          $_SESSION['login_user'] = $myusername;
          
          header("location: welcome.php");
