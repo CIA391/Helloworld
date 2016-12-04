@@ -29,8 +29,8 @@ if (isset($_SESSION['username']))
 
     <h1>My Login Form</h1>
     <form method="post" action="checklogin.php">
-    <p><input type="text" name="username" value="" placeholder="Username"></p>
-    <p><input type="password" name="password" value="" placeholder="Password"></p>
+    <p><input type="text" name="username" value="" placeholder="Username please"></p>
+    <p><input type="password" name="password" value="" placeholder="Password please"></p>
     <p class="submit"><input type="submit" name="commit" value="Login"></p>
     </form>
     <a href="signupform.php">Signup</a>
