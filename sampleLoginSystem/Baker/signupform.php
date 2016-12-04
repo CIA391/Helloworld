@@ -8,13 +8,13 @@
     <h1>Signup Form</h1>
     <?
     session_start();
-    if (isset($_SESSION['Signupfail'] = "Fail1"))
+    if (isset($_SESSION['Signupfail'] == "Fail1"))
     {
         echo "<p><font color='red'>Hello please ensure you fill the bo</font></p>";
-    } elseif (isset($_SESSION['Signupfail'] = "Fail2"))
+    } elseif (isset($_SESSION['Signupfail'] == "Fail2"))
     {
         echo "<p><font color='red'>Hello.</font></p>";
-    } elseif (isset($_SESSION['Signupfail'] = "Fail3"))
+    } elseif (isset($_SESSION['Signupfail'] == "Fail3"))
     {
         echo "<p><font color='red'>use empty spaces.</font></p>";
     }
