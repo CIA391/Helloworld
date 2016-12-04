@@ -34,7 +34,7 @@ if (isset($_SESSION['username']))
     <p><input type="password" name="password" value="" placeholder="Password please"></p>
     <p class="submit"><input type="submit" name="commit" value="Login"></p>
     </form>
-    <--This is a link to signyup to the site-->
+    <!--This is a link to signyup to the site-->
     <a href="signupform.php">Signup</a>
 
 <? } ?>
