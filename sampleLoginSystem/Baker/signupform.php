@@ -6,6 +6,12 @@
 </head>
 <body>
     <h1>Signup Form</h1>
+    <?
+    session_start();
+    if (isset($_SESSION['Signupfail'])){
+        echo "<p><font color='red'>Hello please enter the password you want to use in both password boxes</font></p>";
+    }
+    ?>
     <form method="post" action="signup.php">
         <!-- This is the form used for users to sign up -->
         <p><input type="text" name="username" value="" placeholder="Username please"></p>
