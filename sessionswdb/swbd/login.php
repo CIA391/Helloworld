@@ -25,7 +25,6 @@
       }else {
          $error = "Your Login Name or Password is invalid";
       }
-	   echo "$_SESSION['login_user']"
    }
 ?>
 <html>
