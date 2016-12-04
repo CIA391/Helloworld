@@ -37,8 +37,7 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
 //This checks to see if the username is taken or not.
 $query = mysql_query("SELECT * FROM users WHERE username='$myusername'");
 $num_rows = mysql_num_rows($query);
-echo $num_rows;
-if(mysql_num_rows($query) > 0 ) {
+if ($num_rows > 0 ) {
     //session_start();
     //$_SESSION['Signupfail'] = "Fail4";
     //header("location:signupform.php");
