@@ -4,7 +4,7 @@
     <title>Login Page</title>
 </head>
 <body>
-<form action="checklogin.php" method="post">
+<form action="login.php" method="post">
     Name:<br>
     <input type="text" name="username">
     <br>
