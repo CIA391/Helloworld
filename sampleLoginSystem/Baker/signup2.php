@@ -8,7 +8,7 @@ $passwordcheck = $_POST["passwordcheck"];
 
 if ($password==$passwordcheck)
 {
-    $sql = "INSERT INTO users (username, password, email, userType) VALUES ('". $username ."', '" .$password."', 'reader')";
+    $sql = "INSERT INTO users (username, password, userType) VALUES ('". $username ."', '" .$password."', 'reader')";
 
     if (mysqli_query($db, $sql)) {
     } else {
@@ -19,7 +19,7 @@ if ($password==$passwordcheck)
     $_SESSION['username'] = $username;
     header("location:index.php");
 
-    $sql = "INSERT INTO users (username, password, email, userType) VALUES ('". $username ."', '" .$password."', 'reader')";
+    $sql = "INSERT INTO users (username, password, userType) VALUES ('". $username ."', '" .$password."', 'reader')";
 } else {
     echo "Passwords do not match";
 }
