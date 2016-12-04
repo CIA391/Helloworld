@@ -7,7 +7,7 @@
 <body>
 <form action="checklogin.php" method="post">
     Name:<br>
-    <input type="text" name="name">
+    <input type="text" name="username">
     <br>
     Password:<br>
     <input type="password" name="password">
