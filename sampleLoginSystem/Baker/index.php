@@ -33,7 +33,7 @@ if (isset($_SESSION['username']))
     <p><input type="password" name="password" value="" placeholder="Password"></p>
     <p class="submit"><input type="submit" name="commit" value="Login"></p>
     </form>
-    <a href="signup.php">Signup</a>
+    <a href="signupform.php">Signup</a>
 
 <? } ?>
 
