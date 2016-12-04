@@ -7,6 +7,7 @@
 <body>
     <h1>Signup Form</h1>
     <form method="post" action="signup.php">
+        <!-- This is the form used for users to sign up -->
         <p><input type="text" name="username" value="" placeholder="Username please"></p>
         <p><input type="password" name="password" value="" placeholder="Password please"></p>
         <p><input type="password" name="passwordcheck" value="" placeholder="Confirm Password please"></p>
