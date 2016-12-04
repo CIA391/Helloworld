@@ -11,8 +11,6 @@ if(empty($username) || empty($password) || empty($passwordcheck))
     session_start();
     $_SESSION['Signupfail'] = "Fail";
     header("location:signupform.php");
-    echo "You did not fill out the required fields.";
-    die();  // Note this
     }
 
 //This checks if the password is 100% what the user typed
