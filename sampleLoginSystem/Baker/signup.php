@@ -2,13 +2,13 @@
 
 include ("db_connect.php");
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+$myusername = $_POST["username"];
+$mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
-if ($password==$passwordcheck)
+if ($mypassword==$passwordcheck)
 {
-    $sql = "INSERT INTO users (username, password, userType) VALUES ('". $username ."', '" .$password."', 'reader')";
+    $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 
     if (mysqli_query($db, $sql)) {
     } else {
@@ -16,10 +16,10 @@ if ($password==$passwordcheck)
     }
 
     session_start();
-    $_SESSION['username'] = $username;
+    $_SESSION['username'] = $myusername;
     header("location:index.php");
 
-    $sql = "INSERT INTO users (username, password, userType) VALUES ('". $username ."', '" .$password."', 'reader')";
+    $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
     echo "Passwords do not match";
 }
