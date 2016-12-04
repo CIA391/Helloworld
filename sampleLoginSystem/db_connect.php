@@ -1,21 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: michaelcrabb
- * Date: 18/11/2015
- * Time: 09:43
- */
-
-$db = new mysqli(
-    "eu-cdbr-azure-west-c.cloudapp.net",
-    "b0c2ff384f05bb",
-    "82b4d3a0",
-    "mjc7778db"
+$db = new mysqli (
+    'us-cdbr-azure-southcentral-f.cloudapp.net',
+    'bf9afe7c1df5c8',
+    '5d557954',
+    'acsm_0dd8805538e55e7'
 );
-
-// test if connection was established, and print any errors
-
 if (!$db) {
     die('Connect Error: ' . mysqli_connect_errno());
 }
-
