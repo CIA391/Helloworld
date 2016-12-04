@@ -17,7 +17,7 @@
       	echo "$count";
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
-      if($count == "1") {
+      if($count == 1) {
          session_register("myusername");
          //$_SESSION['login_user'] = $myusername;
          	echo "You got in";
