@@ -5,11 +5,11 @@
 			$user = $_POST['user'];
 			$pass = $_POST['pass'];
 
-			$query = mysql_query("SELECT * FROM users WHERE Username='$user'");
+			$query = mysql_query("SELECT * FROM admin WHERE Username='$user'");
 			if(mysql_num_rows($query) > 0 ) { //check if there is already an entry for that username
 				echo "Username already exists!";
 			}else{
-				mysql_query("INSERT INTO users (Username, Password) VALUES ('$user', '$pass')");
+				mysql_query("INSERT INTO users (username, password) VALUES ('$user', '$pass')");
 				header("location:index.php");
 			}
 	}
