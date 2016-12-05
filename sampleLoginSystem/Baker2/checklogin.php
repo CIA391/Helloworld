@@ -33,7 +33,8 @@ $userType = "";
 $boom = "SELECT usertype FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 $result = $db->query($boom);
 while($row = $result->fetch_array()){
-    echo "<p>Item found in database, setting $usertype</p>";
+    echo "<p>Item found in database, setting usertype</p>";
+    echo "<p>Usertype is {$row['userType']}</p>";
 $userType = $row['userType'];
 }   
   
