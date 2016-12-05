@@ -30,7 +30,7 @@ if (isset($_SESSION['username']))
     <!--This is the form used to login-->
     <h1>Login</h1> 
     <?
-    if(isset($_GET["inserted"]))  
+    if(isset($_GET["Loginfail"]))  
     {  
         echo "<p><font color='red'>Please make sure you enter the correct information.</font></p>";  
  }  
