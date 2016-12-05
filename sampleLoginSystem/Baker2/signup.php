@@ -66,6 +66,7 @@ if($mypassword==$passwordcheck) {
     while($row = $result->fetch_array()){
         echo "<p>Item found in database, setting $usertype</p>";
     $userType = $row['userType'];
+        echo "<p>Item found in database, setting $usertype</p>";
     }  
     
     //Start user session
