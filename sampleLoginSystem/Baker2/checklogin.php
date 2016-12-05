@@ -21,12 +21,18 @@ $checker = 0;
 while($row = $result->fetch_array()) {
     $checker = 1;
 }
-      
+
+$boom = "SELECT usertype FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
+$result = $db->query($boom);
+while($row = $result->fetch_array()){
+$userType = $row['userType']
+echo $userType;
 //This deals with if any matched or not. And send the user back to the index page
 if($checker==1){
     session_start();
     $_SESSION['username'] = $myusername;
-    header("location:index.php");
+    $_SESSION['userType'] = $userType;
+    //header("location:index.php");
 } else {
-    header("location:index.php?Loginfail=1");
+    //header("location:index.php?Loginfail=1");
 }
