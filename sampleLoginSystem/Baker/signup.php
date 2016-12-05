@@ -38,14 +38,14 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
 $query = mysql_query("SELECT * FROM users WHERE username='$myusername'");
 $num_rows = mysql_num_rows($query);
 if ($num_rows > 0 ) {
-    //session_start();
-    //$_SESSION['Signupfail'] = "Fail4";
-    //header("location:signupform.php");
+    session_start();
+    $_SESSION['Signupfail'] = "Fail4";
+    header("location:signupform.php");
     die();
 }
 
-$sql = "SELECT * FROM users WHERE username='". $myusername . "'";
-$result = $db->query($sql);
+//$sql = "SELECT * FROM users WHERE username='". $myusername . "'";
+//$result = $db->query($sql);
 
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
