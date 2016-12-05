@@ -43,6 +43,16 @@ if(mysql_num_rows($dup) >0){
     die();
 }
 
+$myusername = mysql_real_escape_sequence($_GET['username']);
+$query = "SELECT username FROM users WHERE username = '$myusername'";
+$results = @mysql_query($query);
+if(mysql_num_rows($results) > 0)
+{
+  // Username exists.
+  echo "Error: Username already taken.";
+    die();
+}
+
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
 {
