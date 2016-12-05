@@ -2,17 +2,10 @@
 include ("db_connect.php");
 //information from the index form
 
-if(isset($_POST["submit"])) {
-    if(empty($_POST["username"]) || empty($_POST["username"])){
-        $error = "Both fields are required.";
-    } else {
-
-
 $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 echo "$myusername";
 echo "$mypassword";
-
 
 //checking to see if any usernames and password pairs match any in the database
 $myusername = stripslashes($myusername);
