@@ -38,8 +38,8 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
 $dup = mysql_query("SELECT username FROM users WHERE username='$myusername'");
 $userchecker = mysql_fetch_assoc($dup);
 if(mysql_num_rows($dup) >0){
-    session_start();
-    $_SESSION['Signupfail'] = "Fail4";
+    //session_start();
+    //$_SESSION['Signupfail'] = "Fail4";
     header("location:signupform.php");
     die();
 }
@@ -81,8 +81,8 @@ if($mypassword==$passwordcheck)
 
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
-    session_start();
-    $_SESSION['Signupfail'] = "Fail3";
+    //session_start();
+    //$_SESSION['Signupfail'] = "Fail3";
     header("location:signupform.php");
     die();
 }
