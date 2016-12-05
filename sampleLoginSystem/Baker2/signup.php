@@ -51,15 +51,6 @@ if(mysqli_num_rows($dup) >0){
     die();
 }
 
-//Code for getting usertype extracted
-$userType = "";
-$boom = "SELECT userType FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
-$result = $db->query($boom);
-while($row = $result->fetch_array()){
-    echo "<p>Item found in database, setting $usertype</p>";
-$userType = $row['userType'];
-}  
-
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck) {
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
@@ -67,6 +58,17 @@ if($mypassword==$passwordcheck) {
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($db);
     }
+    
+    //Code for getting usertype extracted
+    $userType = "";
+    $boom = "SELECT userType FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
+    $result = $db->query($boom);
+    while($row = $result->fetch_array()){
+        echo "<p>Item found in database, setting $usertype</p>";
+    $userType = $row['userType'];
+    }  
+    
+    //Start user session
     session_start();
     $_SESSION['username'] = $myusername;
     $_SESSION['userType'] = $userType;
