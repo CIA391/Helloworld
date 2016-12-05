@@ -14,11 +14,11 @@ $mypassword = stripslashes($mypassword);
 $mypassword = mysqli_real_escape_string($db, $mypassword);
 $passwordcheck = stripslashes($passwordcheck);
 $passwordcheck = mysqli_real_escape_string($db, $passwordcheck);
+
 //This checks if there is any spaces in the user entered data
 $userspace = 'false';
 $passspace = 'false';
 $pass2space = 'false';
-
 if (strpos($myusername, ' ') !== false) {
     $userspace = 'true';
 }
@@ -28,11 +28,13 @@ if (strpos($mypassword, ' ') !== false) {
 if (strpos($passwordcheck, ' ') !== false) {
     $pass2space ='true';
 }
+
 //This tests to see if there is any spaces in the text
 if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
     //header("location:signupform.php?space=1");
     die();
 }
+
 //This checks to see if the fields are empty or not.
 if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     {
