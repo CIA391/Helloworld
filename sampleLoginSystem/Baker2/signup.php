@@ -24,20 +24,20 @@ if (strpos($passwordcheck, ' ') !== false) {
 }
 //This tests to see if there is any spaces in the text
 if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
-    header("location:signupform.php?space=1");
+    //header("location:signupform.php?space=1");
     die();
 }
 //This checks to see if the fields are empty or not.
 if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     {
-    header("location:signupform.php?empty=1");
+    //header("location:signupform.php?empty=1");
     die();
 }
 //This checks to see if the username is taken or not.
 $dup = "SELECT username FROM users WHERE username='$myusername'";
 $userchecker = mysql_fetch_assoc($dup);
 if(mysql_num_rows($dup) >0){
-    header("location:signupform.php?dup=1");
+    //header("location:signupform.php?dup=1");
     die();
 }
 
@@ -54,10 +54,10 @@ if($mypassword==$passwordcheck)
     session_start();
     $_SESSION['username'] = $myusername;
     $_SESSION['userType'] = 'reader';
-    header("location:index.php");
+    //header("location:index.php");
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
-    header("location:signupform.php?same=1");
+    //header("location:signupform.php?same=1");
     die();
 }
 ?>
