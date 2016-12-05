@@ -23,6 +23,19 @@
             echo "<p><font color='red'>Username already taken.</font></p>";
         }
     }
+    //get test
+    if (isset($_GET["empty"])){
+        echo "<p><font color='red'>Please ensure you dont use spaces in your username or password.</font></p>";
+    }    
+    if (isset($_GET["space"])){
+        echo "<p><font color='red'>Please ensure you fill all the fields.</font></p>";
+    }
+    if (isset($_GET["match"])){
+        echo "<p><font color='red'>Please ensure the password fields match.</font></p>";
+    }
+    if (isset($_GET["duplicate"])){
+        echo "<p><font color='red'>Please ensure the password fields match.</font></p>";
+    }  
     ?>
     <form method="post" action="signup.php">
         <!-- This is the form used for users to sign up -->
