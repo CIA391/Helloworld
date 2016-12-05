@@ -5,8 +5,12 @@ $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
-//Saves the username as it
-$susername = $myusername;
+$myusername = stripslashes($myusername);
+$myusername = mysqli_real_escape_string($db, $myusername);
+$mypassword = stripslashes($mypassword);
+$mypassword = mysqli_real_escape_string($db, $mypassword);
+$passwordcheck = stripslashes($passwordcheck);
+$passwordcheck = mysqli_real_escape_string($db, $passwordcheck);
 
 //This checks if there is any spaces in the user entered data
 if (strpos($myusername, ' ') !== false) {
@@ -39,19 +43,13 @@ if(mysql_num_rows($dup) >0){
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
 {
-    $myusername = stripslashes($myusername);
-    //$myusername = mysql_real_escape_string($myusername);
-    $mypassword = stripslashes($mypassword);
-    //$mypassword = mysql_real_escape_string($mypassword);
-    $passwordcheck = stripslashes($passwordcheck);
-    //$passwordcheck = mysql_real_escape_string($passwordcheck);
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
     if (mysqli_query($db, $sql)) {
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($db);
     }
     session_start();
-    $_SESSION['username'] = $susername;
+    $_SESSION['username'] = $myusername;
     $_SESSION['userType'] = 'reader';
     header("location:index.php");
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
