@@ -9,7 +9,21 @@
 <?
 session_start();
 include ("db_connect.php");
-
+$jives = $_SESSION['Loginfail'];
+    echo $jives;
+    
+    if (isset($_SESSION['Loginfail']))
+    {
+        if ($jives == "Fail1"){
+            echo "<p><font color='red'>Please ensure you dont use spaces in your username or password.</font></p>";
+        } elseif ($jives == "Fail2"){
+            echo "<p><font color='red'>Please ensure you fill all the fields.</font></p>";
+        }
+    }
+    ?>    
+    
+    
+    
 //This checks to see if the user is logged in or not
 if (isset($_SESSION['username']))
 {
@@ -29,6 +43,20 @@ if (isset($_SESSION['username']))
 ?>
     <!--This is the form used to login-->
     <h1>Login</h1>
+
+   <?
+$jives = $_SESSION['Loginfail'];
+    echo $jives;
+    if (isset($_SESSION['Loginfail']))
+    {
+        if ($jives == "Fail1"){
+            echo "<p><font color='red'>Please ensure you dont use spaces in your username or password.</font></p>";
+        } elseif ($jives == "Fail2"){
+            echo "<p><font color='red'>Please ensure you fill all the fields.</font></p>";
+        }
+    }
+    ?>    
+    
     <form method="post" action="checklogin.php">
     <p><input type="text" name="username" value="" placeholder="Username please"></p>
     <p><input type="password" name="password" value="" placeholder="Password please"></p>
