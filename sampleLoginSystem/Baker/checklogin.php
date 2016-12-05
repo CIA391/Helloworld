@@ -19,19 +19,12 @@ $checker = 0;
 while($row = $result->fetch_array()) {
     $checker = 1;
 }
-
-//The following code gets the userType
-$session = "SELECT * FROM users WHERE username='". $_SESSION['username'] . "'";
-$see = $db->query($session);
-$roo = $see->fetch_array();
-$userType = $roo['userType'];
     
     
 //This deals with if any matched or not. And send the user back to the index page
 if($checker==1){
     session_start();
     $_SESSION['username'] = $myusername;
-    $_SESSION['username'] = $userType;
     header("location:index.php");
 } else {
     session_start();
