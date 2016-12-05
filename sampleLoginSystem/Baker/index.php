@@ -18,7 +18,7 @@ if (isset($_SESSION['username']))
     $result = $db->query($sql);
     while($row = $result->fetch_array())
     {
-        echo "<p>User type is " . $_SESSION['userType'] . "</p>";
+        echo "<p>User type is " . $row['userType'] . "</p>";
     }
     ?>
     <!--This is a link to logout the site-->
