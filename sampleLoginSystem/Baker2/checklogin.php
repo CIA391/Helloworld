@@ -36,7 +36,7 @@ if($checker==1){
     session_start();
     $_SESSION['username'] = $myusername;
     $_SESSION['userType'] = $userType;
-    //header("location:index.php");
+    header("location:index.php");
 } else {
-    //header("location:index.php?Loginfail=1");
+    header("location:index.php?Loginfail=1");
 }
