@@ -48,6 +48,14 @@ if(mysqli_num_rows($dup) >0){
     die();
 }
 
+$userType = "";
+//Code for getting usertype extracted
+$boom = "SELECT userType FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
+$result = $db->query($boom);
+while($row = $result->fetch_array()){
+$userType = $row['userType'];
+}  
+
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
 {
@@ -58,7 +66,7 @@ if($mypassword==$passwordcheck)
     }
     session_start();
     $_SESSION['username'] = $myusername;
-    $_SESSION['userType'] = 'reader';
+    $_SESSION['userType'] = $userType;
     header("location:index.php");
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
