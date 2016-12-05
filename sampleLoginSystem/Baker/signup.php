@@ -33,9 +33,12 @@ if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
 //This checks to see if the fields are empty or not.
 if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     {
-    session_start();
-    $_SESSION['Signupfail'] = "Fail2";
-    header("location:signupform.php");
+    echo $myusername;
+    echo $mypassword;
+    echo $passwordcheck;
+    //session_start();
+    //$_SESSION['Signupfail'] = "Fail2";
+    //header("location:signupform.php");
     die();
 }
 
