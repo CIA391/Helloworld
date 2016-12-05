@@ -1,39 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login Form</title>
-</head>
-<body>
-
-<?
-session_start();
+<?php
 include ("db_connect.php");
-if (isset($_SESSION['username']))
+$username = Chris; // you must escape any input. Remember.
+ 
+$query = "SELECT * FROM users WHERE username = '$username}'";
+ 
+$result = mysql_query($query);
+ 
+if ( mysql_num_rows ( $result ) > 1 )
 {
-    echo "<p>Hello " . $_SESSION['username'] . "</p>";
-    $sql = "SELECT * FROM users WHERE username='". $_SESSION['username'] . "'";
-    $result = $db->query($sql);
-    while($row = $result->fetch_array())
-    {
-        echo "<p>User type is " . $row['userType'] . "</p>";
-    }
-    ?>
-    <a href="logout.php">Logout</a>
-    
-    <?
-} else {
-?>
-
-    <h1>My Login Form</h1>
-    <form method="post" action="checklogin.php">
-    <p><input type="text" name="username" value="" placeholder="Username please"></p>
-    <p><input type="password" name="password" value="" placeholder="Password please"></p>
-    <p class="submit"><input type="submit" name="commit" value="Login"></p>
-    </form>
-    <a href="signupform.php">Signup</a>
-
-<? } ?>
-
-</body>
-</html>
+    /* Username already exists */
+    echo 'Username already exists';
+}
+else
+{
+    /* Username doesn't exist */
+    /* .. insert query */
+}
