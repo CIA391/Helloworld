@@ -6,6 +6,11 @@ $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
+$myusername = stripslashes($myusername);
+$myusername = mysql_real_escape_string($myusername);
+$mypassword = stripslashes($mypassword);
+$mypassword = mysql_real_escape_string($mypassword);
+
 //This checks if there is any spaces in the user entered data
 if (strpos($myusername, ' ') !== false) {
     $userspace = 'true';
