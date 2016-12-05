@@ -56,6 +56,7 @@ $userType = "";
 $boom = "SELECT userType FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 $result = $db->query($boom);
 while($row = $result->fetch_array()){
+    echo "<p>Item found in database, setting $usertype</p>";
 $userType = $row['userType'];
 }  
 
@@ -69,7 +70,7 @@ if($mypassword==$passwordcheck) {
     session_start();
     $_SESSION['username'] = $myusername;
     $_SESSION['userType'] = $userType;
-    header("location:index.php");
+    //header("location:index.php");
     
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
     
