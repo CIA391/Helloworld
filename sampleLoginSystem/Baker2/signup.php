@@ -4,6 +4,10 @@ include ("db_connect.php");
 $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
+
+//Saves the username as it
+$susername = $myusername;
+
 //This checks if there is any spaces in the user entered data
 if (strpos($myusername, ' ') !== false) {
     $userspace = 'true';
@@ -47,7 +51,7 @@ if($mypassword==$passwordcheck)
         echo "Error: " . $sql . "<br>" . mysqli_error($db);
     }
     session_start();
-    $_SESSION['username'] = $myusername;
+    $_SESSION['username'] = $susername;
     header("location:index.php");
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
