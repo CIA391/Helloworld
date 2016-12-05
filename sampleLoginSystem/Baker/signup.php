@@ -43,6 +43,13 @@ if(mysql_num_rows($dup) >0){
     die();
 }
 
+$mysql_get_users = mysql_query("SELECT * FROM table_name where username='$username'");
+$get_rows = mysql_affected_rows($mysql_get_users);
+if($get_rows >=1){
+echo "user exists";
+die();
+}
+
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
 {
