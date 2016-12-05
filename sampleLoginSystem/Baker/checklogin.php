@@ -21,9 +21,9 @@ while($row = $result->fetch_array()) {
 }
 
 //The following code gets the userType
-$session = "SELECT userType FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
+$session = "SELECT * FROM users WHERE username='". $_SESSION['username'] . "'";
 $result = $db->query($session);
-while($row = $result->fetch_array()){
+while($row = $result->fetch_array())
     
 //This deals with if any matched or not. And send the user back to the index page
 if($checker==1){
