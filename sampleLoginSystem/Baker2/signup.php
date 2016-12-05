@@ -1,8 +1,5 @@
 <?php
 include ("db_connect.php");
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 //This is the fields from the signup form
 $myusername = $_POST["username"];
@@ -15,10 +12,12 @@ $mypassword = mysqli_real_escape_string($db, $mypassword);
 $passwordcheck = stripslashes($passwordcheck);
 $passwordcheck = mysqli_real_escape_string($db, $passwordcheck);
 
-//This checks if there is any spaces in the user entered data
+//This declairs the boolians so they dont cause an error
 $userspace = 'false';
 $passspace = 'false';
 $pass2space = 'false';
+
+//This checks to see if their is any spaces in the variables
 if (strpos($myusername, ' ') !== false) {
     $userspace = 'true';
 }
@@ -48,6 +47,7 @@ if(mysqli_num_rows($dup) >0){
     //header("location:signupform.php?dup=1");
     die();
 }
+
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
 {
