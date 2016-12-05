@@ -1,5 +1,9 @@
 <?php
 include ("db_connect.php");
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 //This is the fields from the signup form
 $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
