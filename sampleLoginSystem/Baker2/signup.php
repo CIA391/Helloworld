@@ -15,6 +15,10 @@ $mypassword = mysqli_real_escape_string($db, $mypassword);
 $passwordcheck = stripslashes($passwordcheck);
 $passwordcheck = mysqli_real_escape_string($db, $passwordcheck);
 //This checks if there is any spaces in the user entered data
+$userspace = 'false';
+$passspace = 'false';
+$pass2space = 'false';
+
 if (strpos($myusername, ' ') !== false) {
     $userspace = 'true';
 }
