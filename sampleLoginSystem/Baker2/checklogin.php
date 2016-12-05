@@ -13,7 +13,6 @@ $mypassword = $_POST["password"];
 echo "$myusername";
 echo "$mypassword";
 
-if(empty($_POST["username"] ||
 
 //checking to see if any usernames and password pairs match any in the database
 $myusername = stripslashes($myusername);
