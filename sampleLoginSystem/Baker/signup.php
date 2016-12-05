@@ -6,11 +6,6 @@ $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
 
-$myusername = stripslashes($myusername);
-$myusername = mysql_real_escape_string($myusername);
-$mypassword = stripslashes($mypassword);
-$mypassword = mysql_real_escape_string($mypassword);
-
 //This checks if there is any spaces in the user entered data
 if (strpos($myusername, ' ') !== false) {
     $userspace = 'true';
@@ -33,12 +28,9 @@ if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
 //This checks to see if the fields are empty or not.
 if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     {
-    echo $myusername;
-    echo $mypassword;
-    echo $passwordcheck;
-    //session_start();
-    //$_SESSION['Signupfail'] = "Fail2";
-    //header("location:signupform.php");
+    session_start();
+    $_SESSION['Signupfail'] = "Fail2";
+    header("location:signupform.php");
     die();
 }
 
@@ -54,6 +46,12 @@ if(mysql_num_rows($dup) >0){
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
 {
+    $myusername = stripslashes($myusername);
+    $myusername = mysql_real_escape_string($myusername);
+    $mypassword = stripslashes($mypassword);
+    $mypassword = mysql_real_escape_string($mypassword);
+    $passwordcheck = stripslashes($passwordcheck);
+    $passwordcheck = mysql_real_escape_string($passwordcheck);
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 
     if (mysqli_query($db, $sql)) {
