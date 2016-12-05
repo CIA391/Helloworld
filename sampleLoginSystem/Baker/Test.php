@@ -13,6 +13,5 @@ if ( mysql_num_rows ( $result ) > 1 )
 }
 else
 {
-    /* Username doesn't exist */
-    /* .. insert query */
+   echo 'Username is free';
 }
