@@ -10,9 +10,9 @@ $mypassword = $_POST["password"];
 
 //checking to see if any usernames and password pairs match any in the database
 $myusername = stripslashes($myusername);
-$myusername = mysql_real_escape_string($myusername);
+$myusername = mysqli_real_escape_string($myusername);
 $mypassword = stripslashes($mypassword);
-$mypassword = mysql_real_escape_string($mypassword);
+$mypassword = mysqli_real_escape_string($mypassword);
 echo $myusername;
 echo $mypassword;
 
