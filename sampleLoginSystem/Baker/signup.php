@@ -77,8 +77,8 @@ if($mypassword==$passwordcheck)
 
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
-    //session_start();
-    //$_SESSION['Signupfail'] = "Fail3";
+    session_start();
+    $_SESSION['Signupfail'] = "Fail3";
     header("location:signupform.php?match=1");
     die();
 }
