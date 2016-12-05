@@ -36,9 +36,9 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     die();
 }
 //This checks to see if the username is taken or not.
-$dup = mysql_query("SELECT username FROM users WHERE username='$myusername'");
-$userchecker = mysql_fetch_assoc($dup);
-if(mysql_num_rows($dup) >0){
+$dup = mysqli_query("SELECT username FROM users WHERE username='$myusername'");
+$userchecker = mysqli_fetch_assoc($dup);
+if(mysqli_num_rows($dup) >0){
     //header("location:signupform.php?dup=1");
     die();
 }
