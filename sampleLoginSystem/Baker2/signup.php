@@ -40,11 +40,11 @@ if(mysql_num_rows($dup) >0){
 if($mypassword==$passwordcheck)
 {
     $myusername = stripslashes($myusername);
-    $myusername = mysql_real_escape_string($myusername);
+    //$myusername = mysql_real_escape_string($myusername);
     $mypassword = stripslashes($mypassword);
-    $mypassword = mysql_real_escape_string($mypassword);
+    //$mypassword = mysql_real_escape_string($mypassword);
     $passwordcheck = stripslashes($passwordcheck);
-    $passwordcheck = mysql_real_escape_string($passwordcheck);
+    //$passwordcheck = mysql_real_escape_string($passwordcheck);
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
     if (mysqli_query($db, $sql)) {
     } else {
@@ -52,6 +52,7 @@ if($mypassword==$passwordcheck)
     }
     session_start();
     $_SESSION['username'] = $susername;
+    $_SESSION['userType'] = 'reader';
     header("location:index.php");
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
 } else {
