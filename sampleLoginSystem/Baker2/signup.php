@@ -1,10 +1,12 @@
 <?php
 include ("db_connect.php");
 
-//This is the fields from the signup form
+//This is the fields from the signup form.
 $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
 $passwordcheck = $_POST["passwordcheck"];
+
+//Security checking V1.
 $myusername = stripslashes($myusername);
 $myusername = mysqli_real_escape_string($db, $myusername);
 $mypassword = stripslashes($mypassword);
@@ -40,6 +42,7 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     header("location:signupform.php?empty=1");
     die();
 }
+
 //This checks to see if the username is taken or not.
 $dup = mysqli_query($db, "SELECT username FROM users WHERE username='$myusername'");
 $userchecker = mysqli_fetch_assoc($dup);
@@ -48,8 +51,8 @@ if(mysqli_num_rows($dup) >0){
     die();
 }
 
-$userType = "";
 //Code for getting usertype extracted
+$userType = "";
 $boom = "SELECT userType FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 $result = $db->query($boom);
 while($row = $result->fetch_array()){
@@ -57,10 +60,9 @@ $userType = $row['userType'];
 }  
 
 //This checks if the password is 100% what the user typed
-if($mypassword==$passwordcheck)
-{
+if($mypassword==$passwordcheck) {
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
-    if (mysqli_query($db, $sql)) {
+    if (mysqli_query($db, $sql)) {        
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($db);
     }
@@ -68,7 +70,9 @@ if($mypassword==$passwordcheck)
     $_SESSION['username'] = $myusername;
     $_SESSION['userType'] = $userType;
     header("location:index.php");
+    
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
+    
 } else {
     header("location:signupform.php?same=1");
     die();
