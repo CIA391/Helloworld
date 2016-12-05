@@ -30,7 +30,7 @@ while($row = $result->fetch_array()) {
 
 $userType = "";
 //Test code for getting usertype extracted
-$boom = "SELECT usertype FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
+$boom = "SELECT userType FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 $result = $db->query($boom);
 while($row = $result->fetch_array()){
     echo "<p>Item found in database, setting usertype</p>";
