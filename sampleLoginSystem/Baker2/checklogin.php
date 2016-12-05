@@ -27,6 +27,7 @@ $boom = "SELECT usertype FROM users WHERE username ='". $myusername ."' and pass
 $result = $db->query($boom);
 while($row = $result->fetch_array()){
 $userType = $row['userType'];
+}
 echo $userType;    
     
 //This deals with if any matched or not. And send the user back to the index page
