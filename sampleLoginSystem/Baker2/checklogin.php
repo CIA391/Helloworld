@@ -1,6 +1,9 @@
 <?php
 include ("db_connect.php");
 //information from the index form
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
@@ -12,7 +15,7 @@ $mypassword = stripslashes($mypassword);
 $mypassword = mysql_real_escape_string($mypassword);
 echo $myusername;
 echo $mypassword;
-die();
+
 $sql = "SELECT * FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 //The following code checks to see if any match
 $result = $db->query($sql);
