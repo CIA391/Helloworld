@@ -22,11 +22,13 @@ while($row = $result->fetch_array()) {
     $checker = 1;
 }
 
+//Test code for getting usertype extracted
 $boom = "SELECT usertype FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 $result = $db->query($boom);
 while($row = $result->fetch_array()){
 $userType = $row['userType'];
 echo $userType;    
+    
 //This deals with if any matched or not. And send the user back to the index page
 if($checker==1){
     session_start();
