@@ -30,19 +30,36 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     die();
 }
 //This checks to see if the username is taken or not.
-$query = mysql_query("SELECT * FROM users WHERE username='$myusername'");
-$num_rows = mysql_num_rows($query);
-if ($num_rows > 0 ) {
-    //session_start();
-    //$_SESSION['Signupfail'] = "Fail4";
-    //header("location:signupform.php");
+$dup = mysql_query("SELECT username FROM users WHERE username='$myusername'");
+$userchecker = mysql_fetch_assoc($dup);
+if(mysql_num_rows($dup) >0){
+    session_start();
+    $_SESSION['Signupfail'] = "Fail4";
+    header("location:signupform.php");
     die();
 }
-$sql = "SELECT * FROM users WHERE username='". $myusername . "'";
-$result = $db->query($sql);
+$myusername = mysql_real_escape_sequence($_GET['username']);
+$query = "SELECT username FROM users WHERE username = '$myusername'";
+if ($myusername == $userchecker['username']) {
+    echo "Not avaifddd";
+    die();
+}
+$results = @mysql_query($query);
+if(mysql_num_rows($results) > 0)
+{
+  // Username exists.
+  echo "Error: Username already taken.";
+    die();
+}
 //This checks if the password is 100% what the user typed
 if($mypassword==$passwordcheck)
 {
+    $myusername = stripslashes($myusername);
+    $myusername = mysql_real_escape_string($myusername);
+    $mypassword = stripslashes($mypassword);
+    $mypassword = mysql_real_escape_string($mypassword);
+    $passwordcheck = stripslashes($passwordcheck);
+    $passwordcheck = mysql_real_escape_string($passwordcheck);
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
     if (mysqli_query($db, $sql)) {
     } else {
