@@ -11,6 +11,10 @@ $mypassword = $_POST["password"];
 //$mypassword = stripcslashes($mypassword);
 
 //checking to see if any usernames and password pairs match any in the database
+$myusername = stripslashes($myusername);
+$myusername = mysql_real_escape_string($myusername);
+$mypassword = stripslashes($mypassword);
+$mypassword = mysql_real_escape_string($mypassword);
 $sql = "SELECT * FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 
 //The following code checks to see if any match
