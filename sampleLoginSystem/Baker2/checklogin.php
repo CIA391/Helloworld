@@ -29,7 +29,10 @@ $result = $db->query($boom);
 while($row = $result->fetch_array()){
 $userType = $row['userType'];
 }   
-    
+  
+//delete me after fixed
+echo 'userType';
+
 //This deals with if any matched or not. And send the user back to the index page
 if($checker==1){
     session_start();
