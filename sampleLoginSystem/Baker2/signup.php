@@ -63,7 +63,7 @@ if($mypassword==$passwordcheck) {
     session_start();
     $_SESSION['username'] = $myusername;
     $_SESSION['userType'] = 'reader';
-    //header("location:index.php");
+    header("location:index.php");
     
     $sql = "INSERT INTO users (username, password, userType) VALUES ('". $myusername ."', '" .$mypassword."', 'reader')";
     
