@@ -23,6 +23,7 @@ while($row = $result->fetch_array()) {
     $checker = 1;
 }
 
+$userType = "";
 //Test code for getting usertype extracted
 $boom = "SELECT usertype FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 $result = $db->query($boom);
