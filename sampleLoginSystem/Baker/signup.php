@@ -19,8 +19,6 @@ if (strpos($passwordcheck, ' ') !== false) {
 
 //This tests to see if there is any spaces in the text
 if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
-    //session_start();
-    //$_SESSION['Signupfail'] = "Fail1";
     header("location:signupform.php?space=1");
     die();
 }
@@ -28,8 +26,6 @@ if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
 //This checks to see if the fields are empty or not.
 if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     {
-    //session_start();
-    //$_SESSION['Signupfail'] = "Fail2";
     header("location:signupform.php?empty=1");
     die();
 }
@@ -40,7 +36,7 @@ $userchecker = mysql_fetch_assoc($dup);
 if(mysql_num_rows($dup) >0){
     //session_start();
     //$_SESSION['Signupfail'] = "Fail4";
-    header("location:signupform.php");
+    header("location:signupform.php?duplicate=1");
     die();
 }
 
@@ -83,7 +79,7 @@ if($mypassword==$passwordcheck)
 } else {
     //session_start();
     //$_SESSION['Signupfail'] = "Fail3";
-    header("location:signupform.php");
+    header("location:signupform.php?match=1");
     die();
 }
 ?>
