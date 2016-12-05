@@ -20,10 +20,16 @@ while($row = $result->fetch_array()) {
     $checker = 1;
 }
 
+//The following code gets the userType
+$session = "SELECT userType FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
+$result = $db->query($session);
+while($row = $result->fetch_array()){
+    
 //This deals with if any matched or not. And send the user back to the index page
 if($checker==1){
     session_start();
     $_SESSION['username'] = $myusername;
+    $_SESSION['username'] = $row['userType'];
     header("location:index.php");
 } else {
     session_start();
