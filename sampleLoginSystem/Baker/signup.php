@@ -19,18 +19,18 @@ if (strpos($passwordcheck, ' ') !== false) {
 
 //This tests to see if there is any spaces in the text
 if($userspace=='true' || $passspace=='true' || $pass2space=='true') {
-    session_start();
-    $_SESSION['Signupfail'] = "Fail1";
-    header("location:signupform.php");
+    //session_start();
+    //$_SESSION['Signupfail'] = "Fail1";
+    header("location:signupform.php?space=1");
     die();
 }
 
 //This checks to see if the fields are empty or not.
 if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     {
-    session_start();
-    $_SESSION['Signupfail'] = "Fail2";
-    header("location:signupform.php");
+    //session_start();
+    //$_SESSION['Signupfail'] = "Fail2";
+    header("location:signupform.php?empty=1");
     die();
 }
 
