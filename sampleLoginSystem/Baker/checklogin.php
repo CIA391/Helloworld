@@ -10,30 +10,6 @@ $mypassword = $_POST["password"];
 //$myusername = stripcslashes($myusername);
 //$mypassword = stripcslashes($mypassword);
 
-//This checks if there is any spaces in the user entered data
-if (strpos($myusername, ' ') !== false) {
-    $userspace = 'true';
-}
-if (strpos($mypassword, ' ') !== false) {
-    $passspace = 'true';
-}
-
-//This tests to see if there is any spaces in the text
-if($userspace=='true' || $passspace=='true') {
-    session_start();
-    $_SESSION['Loginfail'] = "Fail1";
-    header("location:index.php");
-    die();
-}
-//This checks to see if the fields are empty or not.
-if(empty($myusername) || empty($mypassword)))
-    {
-    session_start();
-    $_SESSION['Loginfail'] = "Fail2";
-    header("location:index.php");
-    die();
-}
-
 //checking to see if any usernames and password pairs match any in the database
 $sql = "SELECT * FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 
