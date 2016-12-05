@@ -36,6 +36,7 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
 
 //This checks to see if the username is taken or not.
 $dup = mysql_query("SELECT username FROM users WHERE username='$myusername'");
+$userchecker = mysql_fetch_assoc($dup);
 if(mysql_num_rows($dup) >0){
     session_start();
     $_SESSION['Signupfail'] = "Fail4";
@@ -45,6 +46,11 @@ if(mysql_num_rows($dup) >0){
 
 $myusername = mysql_real_escape_sequence($_GET['username']);
 $query = "SELECT username FROM users WHERE username = '$myusername'";
+if ($myusername == $userchecker['username']) {
+    echo "Not avaifddd";
+    die();
+}
+
 $results = @mysql_query($query);
 if(mysql_num_rows($results) > 0)
 {
