@@ -13,8 +13,6 @@ $myusername = stripslashes($myusername);
 $myusername = mysqli_real_escape_string($db,$myusername);
 $mypassword = stripslashes($mypassword);
 $mypassword = mysqli_real_escape_string($db,$mypassword);
-echo $myusername;
-echo $mypassword;
 
 $sql = "SELECT * FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 //The following code checks to see if any match
@@ -28,7 +26,7 @@ while($row = $result->fetch_array()) {
 if($checker==1){
     session_start();
     $_SESSION['username'] = $myusername;
-    //header("location:index.php");
+    header("location:index.php");
 } else {
-    //header("location:index.php?Loginfail=1");
+    header("location:index.php?Loginfail=1");
 }
