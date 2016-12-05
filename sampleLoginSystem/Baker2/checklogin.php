@@ -3,15 +3,19 @@ include ("db_connect.php");
 //information from the index form
 $myusername = $_POST["username"];
 $mypassword = $_POST["password"];
+echo "$myusername";
+echo "$mypassword";
 
-//Saves the username as it
-$susername = $myusername;
 
 //checking to see if any usernames and password pairs match any in the database
-//$myusername = stripslashes($myusername);
-//$myusername = mysql_real_escape_string($myusername);
-//$mypassword = stripslashes($mypassword);
-//$mypassword = mysql_real_escape_string($mypassword);
+$myusername = stripslashes($myusername);
+$myusername = mysql_real_escape_string($myusername);
+$mypassword = stripslashes($mypassword);
+$mypassword = mysql_real_escape_string($mypassword);
+echo "$myusername";
+echo "$mypassword";
+die();
+
 $sql = "SELECT * FROM users WHERE username ='". $myusername ."' and password ='". $mypassword . "'";
 //The following code checks to see if any match
 $result = $db->query($sql);
