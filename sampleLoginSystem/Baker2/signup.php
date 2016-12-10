@@ -78,8 +78,6 @@ if($username == $myusername){
     die();
 }
 
-die();
-
 //This compares the passwords. If the match then the user is created. If not then the user is told to check again.
 if($mypassword==$passwordcheck) {
     
@@ -91,11 +89,11 @@ if($mypassword==$passwordcheck) {
     echo $myusername;
     
     //This is meant to recover the info used for the session
-    $dup = $db->prepare("SELECT username FROM users WHERE username=?");
-    $dup->bind_param("s", $myusername);
-    if ($dup->execute()){
-        $dup->bind_result($username);
-        $dup->fetch();
+    $get = $db->prepare("SELECT username FROM users WHERE username=?");
+    $get->bind_param("s", $myusername);
+    if ($get->execute()){
+        $get->bind_result($username);
+        $get->fetch();
         echo $username;
     }
 
