@@ -59,6 +59,7 @@ if(empty($myusername) || empty($mypassword) || empty($passwordcheck))
     header("location:index.php?empty=1");
     die();
 }
+
 echo $myusername;
 //This checks to see if the username is taken or not.
 $dup = $db->prepare("SELECT username FROM users WHERE username=?");
@@ -68,13 +69,10 @@ if ($dup->execute()){
     $dup->fetch();
     echo $username;
 }
-die();
-//$dup = mysqli_query($db, "SELECT username FROM users WHERE username='$myusername'");
-$userchecker = mysqli_fetch_assoc($dup);
-if(mysqli_num_rows($dup) >0){
+if($username == $myusername){
     header("location:index.php?dup=1");
     die();
-} 
+}
 die();
 //This compares the passwords. If the match then the user is created. If not then the user is told to check again.
 if($mypassword==$passwordcheck) {
